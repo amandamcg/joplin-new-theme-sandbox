@@ -1,0 +1,146 @@
+summary
+  cursor: pointer
+
+  &:focus
+    outline: none
+
+  &::-webkit-details-marker,
+  &::marker
+    display: none
+
+  &::before
+    content: "•"
+    font-size: 8px
+    padding-right: var(--padding-small)
+    display: inline-block
+
+ul
+  list-style-type: none
+  padding: 0
+  margin: 0
+
+li
+  padding: var(--padding-small) 0
+
+  span
+    padding: 0 var(--padding-mid)
+
+.list-item-depth-0
+  span
+    padding: 0 calc(var(--padding-mid))
+
+.list-item-depth-1
+  span
+    padding: 0 calc(var(--padding-mid) + var(--padding-mid))
+
+.list-item-depth-2
+  span
+    padding: 0 calc(var(--padding-mid) + var(--padding-mid) + var(--padding-mid))
+
+.list-item-depth-3
+  span
+    padding: 0 calc(var(--padding-mid) + var(--padding-mid) + var(--padding-mid) + var(--padding-mid))
+
+.row
+  display: flex
+
+ul.row
+  margin: 0
+  padding: 0
+
+.header
+  width: 200px
+
+  span
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  button
+    display: inline
+
+.count
+  display: inline-block
+
+body
+  display: grid
+  grid-template-areas: "panel_1 panel_2 panel_3"
+  grid-template-columns: 200px 1fr 4fr
+  margin: 0
+
+#panel-1
+  display: flex
+  flex-direction: column
+  height: 100vh
+  overflow: scroll
+
+#panel-2
+  display: flex
+  flex-direction: column
+  height: 100vh
+  overflow: scroll
+
+#panel-3
+  display: grid
+  grid-template-areas: "note_headline note_headline note_headline note_headline note_timestamp note_metadata" "note_navigation note_tools note_tools note_tools note_view note_view" "note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb" "note_edit note_edit note_edit note_render note_render note_render" "note_tags note_tags note_tags note_tags note_tags note_tags"
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+
+#all-notes
+  grid-area: all_notes
+
+#all-notebooks
+  grid-area: all_notebooks
+
+#all-tags
+  grid-area: all_tags
+
+#sync-status
+  grid-area: sync
+
+#new-note
+  grid-area: new
+
+#search-notes
+  grid-area: search
+
+#current-notebook
+  grid-area: current_notebook
+
+#note-headline
+  grid-area: note_headline
+
+#note-metadata
+  grid-area: note_metadata
+
+#note-timestamp
+  grid-area: note_timestamp
+
+#note-navigation
+  grid-area: note_navigation
+
+#note-tools
+  grid-area: note_tools
+
+#note-view
+  grid-area: note_view
+
+#note-breadcrumb
+  grid-area: note_breadcrumb
+
+#note-edit
+  grid-area: note_edit
+
+#note-render
+  grid-area: note_render
+
+#note-tags
+  grid-area: note_tags
+
+#panel-1
+  grid-area: panel_1
+
+#panel-2
+  grid-area: panel_2
+
+#panel-3
+  grid-area: panel_3

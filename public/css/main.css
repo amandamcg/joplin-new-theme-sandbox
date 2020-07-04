@@ -1,0 +1,205 @@
+@charset "UTF-8";
+:root {
+  --color-primary: #008EE5;
+  --color-1: #FFFFFF;
+  --color-2: #F4F5F6;
+  --color-3: #DADEE2;
+  --color-4: #B8C3CD;
+  --color-5: #77808A;
+  --color-6: #313440;
+  --color-7: #1A1B22;
+  --padding-small: 6px;
+  --padding-mid: 12px;
+  --padding-large: 40px;
+  --border-radius: 3px;
+  --border-base: 1px solid var(--color-5); }
+
+summary {
+  cursor: pointer; }
+  summary:focus {
+    outline: none; }
+  summary::-webkit-details-marker, summary::marker {
+    display: none; }
+  summary::before {
+    content: "•";
+    font-size: 8px;
+    padding-right: var(--padding-small);
+    display: inline-block; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+li {
+  padding: var(--padding-small) 0; }
+  li span {
+    padding: 0 var(--padding-mid); }
+
+.list-item-depth-0 span {
+  padding: 0 calc(var(--padding-mid)); }
+
+.list-item-depth-1 span {
+  padding: 0 calc(var(--padding-mid) + var(--padding-mid)); }
+
+.list-item-depth-2 span {
+  padding: 0 calc(var(--padding-mid) + var(--padding-mid) + var(--padding-mid)); }
+
+.list-item-depth-3 span {
+  padding: 0 calc(var(--padding-mid) + var(--padding-mid) + var(--padding-mid) + var(--padding-mid)); }
+
+.row {
+  display: flex; }
+
+ul.row {
+  margin: 0;
+  padding: 0; }
+
+.header {
+  width: 200px; }
+  .header span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .header button {
+    display: inline; }
+
+.count {
+  display: inline-block; }
+
+body {
+  display: grid;
+  grid-template-areas: "panel_1 panel_2 panel_3";
+  grid-template-columns: 200px 1fr 4fr;
+  margin: 0; }
+
+#panel-1 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll; }
+
+#panel-2 {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: scroll; }
+
+#panel-3 {
+  display: grid;
+  grid-template-areas: "note_headline note_headline note_headline note_headline note_timestamp note_metadata" "note_navigation note_tools note_tools note_tools note_view note_view" "note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb" "note_edit note_edit note_edit note_render note_render note_render" "note_tags note_tags note_tags note_tags note_tags note_tags";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; }
+
+#all-notes {
+  grid-area: all_notes; }
+
+#all-notebooks {
+  grid-area: all_notebooks; }
+
+#all-tags {
+  grid-area: all_tags; }
+
+#sync-status {
+  grid-area: sync; }
+
+#new-note {
+  grid-area: new; }
+
+#search-notes {
+  grid-area: search; }
+
+#current-notebook {
+  grid-area: current_notebook; }
+
+#note-headline {
+  grid-area: note_headline; }
+
+#note-metadata {
+  grid-area: note_metadata; }
+
+#note-timestamp {
+  grid-area: note_timestamp; }
+
+#note-navigation {
+  grid-area: note_navigation; }
+
+#note-tools {
+  grid-area: note_tools; }
+
+#note-view {
+  grid-area: note_view; }
+
+#note-breadcrumb {
+  grid-area: note_breadcrumb; }
+
+#note-edit {
+  grid-area: note_edit; }
+
+#note-render {
+  grid-area: note_render; }
+
+#note-tags {
+  grid-area: note_tags; }
+
+#panel-1 {
+  grid-area: panel_1; }
+
+#panel-2 {
+  grid-area: panel_2; }
+
+#panel-3 {
+  grid-area: panel_3; }
+
+body {
+  color: var(--color-6); }
+
+.header {
+  color: var(--color-5); }
+
+#panel-1 {
+  background-color: var(--color-6);
+  color: var(--color-2); }
+  #panel-1 .selected {
+    background: var(--color-7);
+    color: var(--color-1); }
+  #panel-1 .count {
+    color: var(--color-5); }
+
+#panel-2 {
+  background-color: var(--color-2);
+  color: var(--color-6); }
+  #panel-2 .selected {
+    background: var(--color-4); }
+
+summary::-webkit-details-marker, summary::marker {
+  color: var(--color-4); }
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  src: local("forkawesome-webfont"), url("/fonts/forkawesome-webfont.woff2") format("woff2"); }
+body {
+  font-family: sans-serif; }
+
+.fa, .far, .fas {
+  font-family: "Font Awesome 5 Free";
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1; }
+
+button {
+  background-color: unset;
+  padding: var(--padding-small);
+  border-radius: var(--border-radius);
+  border: 0;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-3); }
+  button.secondary {
+    border: var(--border-base); }
+  button.outline {
+    border: var(--border-base); }
+
+/*# sourceMappingURL=main.css.map */

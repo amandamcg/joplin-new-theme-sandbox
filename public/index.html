@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>   
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Joplin Theme Playground</title>
+    <link type="text/css" rel="stylesheet" href="css/fork-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <link media="(prefers-color-scheme: dark)" type="text/css" rel="stylesheet" href="css/main-dark-mode.css">
+  </head>
+  <body>
+    <div id="panel-1">
+      <div id="all-notes">
+        <div class="header"><i class="fas fa-clone"></i><span>All Notes</span></div>
+      </div>
+      <div id="all-notebooks">
+        <details open>
+          <summary>
+            <div class="header"> <i class="fas fa-book"></i><span>Notebooks</span>
+              <button class="secondary">+</button>
+            </div>
+          </summary>
+          <ul class="list-item-depth-0">
+            <li class="list-item-container"> 
+              <details open>
+                <summary> <span>A Prender
+                    <div class="count">8</div></span></summary>
+                <ul class="list-item-depth-1">
+                  <li class="selected list-item-container"><span>Courses
+                      <div class="count">12</div></span></li>
+                  <li class="list-item-container"><span>Divers
+                      <div class="count">5</div></span></li>
+                  <li class="list-item-container">
+                    <details open>
+                      <summary> <span>Enterprise
+                          <div class="count">23</div></span></summary>
+                      <ul class="list-item-depth-2">
+                        <li class="list-item-container"> <span>Recipes
+                            <div class="count">3</div></span></li>
+                        <li class="list-item-container"> <span>Bookmarks
+                            <div class="count">8</div></span></li>
+                        <li class="list-item-container"> <span>Tickets
+                            <div class="count">12</div></span></li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </details>
+      </div>
+      <div id="all-tags">
+        <details open>
+          <summary>
+            <div class="header"> <i class="fas fa-tags"></i><span>Tags</span></div>
+          </summary>
+          <ul>
+            <li class="list-item-container"> <span>one
+                <div class="count">1</div></span></li>
+            <li class="list-item-container"> <span>two
+                <div class="count">1</div></span></li>
+          </ul>
+        </details>
+      </div>
+      <div id="sync-status">
+        <p>Completed: 07/02/20 9:24 PM</p>
+        <button>synchronize</button>
+      </div>
+    </div>
+    <div id="panel-2">
+      <div id="add-new">
+        <button class="secondary">+ new todo</button>
+        <button class="primary">+ new note</button>
+      </div>
+      <div id="search-notes">
+        <input type="text" placeholder="search">
+      </div>
+      <div id="current-notebook">
+        <ul>
+          <li>Note 1</li>
+          <li class="selected">Note 2</li>
+          <li>
+            <input type="checkbox"> Note 3
+          </li>
+          <li>
+            <input type="checkbox" checked> Note 3
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="panel-3">
+      <div id="note-headline">
+        <h1>Welcome to Joplin</h1>
+      </div>
+      <div id="note-metadata">
+        <button>info</button>
+      </div>
+      <div id="note-timestamp"> 
+        <div>16/06/2020 </div>
+        <div>10:21</div>
+      </div>
+      <div id="note-navigation">
+        <button><</button>
+        <button>></button>
+      </div>
+      <div id="note-tools">
+        <button>B</button>
+        <button>I</button>
+        <button>H</button>
+        <button>*</button>
+        <button>1. </button>
+        <button>[x]</button>
+        <button>%</button>
+        <button>&lt;/&gt;</button>
+        <button>@</button>
+        <button>+</button>
+      </div>
+      <div id="note-view">
+        <button>layout</button>
+        <button>WYSIWYG</button>
+        <button>MD</button>
+        <button>-></button>
+      </div>
+      <div id="note-breadcrumb">
+        <div class="row">
+          <div>In</div>
+          <div> <a href="#">A Prender</a></div>
+        </div>
+      </div>
+      <div id="note-edit">
+        <div>
+          <h1> Welcome to Joplin! 🗒️</h1>
+          <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
+          <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
+          <p>![](./AllClients.png)</p>
+          <h2>Joplin is divided into three parts</h2>
+          <p>Joplin has three main columns:</p>
+        </div>
+      </div>
+      <div id="note-render">
+        <div>
+          <h1> Welcome to Joplin! 🗒️</h1>
+          <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
+          <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
+          <p>![](./AllClients.png)</p>
+          <h2>Joplin is divided into three parts</h2>
+          <p>Joplin has three main columns:</p>
+        </div>
+      </div>
+      <div id="note-tags">
+        <ul class="row">
+          <li>tag 1</li>
+          <li>tag 2</li>
+          <li> 
+            <button>add more tags</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
