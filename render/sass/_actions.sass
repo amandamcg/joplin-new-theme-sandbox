@@ -1,0 +1,75 @@
+button
+  background-color: var(--color-1)
+  border-radius: var(--border-radius)
+  border: 0
+  text-align: center
+  cursor: pointer
+  line-height: 1em
+  padding: calc(var(--padding-small) / 2)
+
+  i
+    padding-right: var(--padding-small)
+
+  &:hover
+    filter: var(--darken-1)
+
+  &.primary
+    border: var(--border-base-primary)
+    background-color: var(--color-primary)
+    color: var(--color-1)
+    padding: var(--padding-small)
+    width: 50%
+
+  &.secondary
+    border: var(--border-base-primary)
+    background-color: var(--color-1)
+    color: var(--color-primary)
+    padding: var(--padding-small)
+    width: 50%
+
+  &.inline
+    border: var(--border-base-primary)
+    background-color: var(--color-1)
+    color: var(--color-primary)
+    padding: var(--padding-ex-small)
+
+  &.outline
+    border: var(--border-base)
+    background-color: var(--color-side-bar)
+    color: var(--color-5)
+    width: 100%
+    padding: var(--padding-small) 0
+
+#note-tags
+  button
+    background-color: var(--color-2)
+    color: var(--color-5)
+    padding: var(--padding-small) var(--padding-mid)
+    border-radius: 100px
+    margin: 0
+
+  a
+    padding-left: var(--padding-mid)
+
+.search-wrapper
+  display: flex
+  border: var(--border-base)
+  border-radius: var(--border-radius)
+  margin: var(--padding-small) var(--padding-mid)
+  background-color: var(--color-1)
+  align-items: center
+
+  i
+    color: var(--color-primary)
+
+  &:focus-within
+    border: var(--border-base-primary)
+
+  input
+    padding: var(--padding-small)
+    width: calc(100% - var(--padding-mid) - var(--padding-mid) - var(--padding-small) - var(--padding-small))
+    border: none
+    background-color: var(--color-1)
+
+    &:focus
+      outline: none

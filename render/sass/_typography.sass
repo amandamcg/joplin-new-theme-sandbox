@@ -1,9 +1,47 @@
+body
+  font-size: var(--font-base)
+
+.title
+  font-size: calc( var(--ratio) * var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base))
+
+h1
+  font-size: calc( var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base))
+
+h2
+  font-size: calc( var(--ratio) * var(--ratio) * var(--font-base))
+
+h3
+  font-size: calc( var(--ratio) * var(--font-base))
+
+h4
+  font-size: calc( var(--font-base))
+
+p, li, fieldset, input, label, button
+  font-size: var(--font-base)
+
+button, .header, #note-metadata
+  font-size: calc(var(--font-base) / var(--ratio))
+
+body
+  font-family: "Trebuchet MS", Helvetica, sans-serif
+  letter-spacing: var(--letter-spacing)
+
+.header
+  text-transform: uppercase
+  letter-spacing: var(--letter-spacing-wide)
+
+.title
+  font-weight: bold
+
+#note-edit
+  font-family: monospace
+
+#note-edit, #note-render
+  line-height: var(--line-height)
+
 @font-face
   font-family: "Font Awesome 5 Free"
   src: local("forkawesome-webfont"), url("/fonts/forkawesome-webfont.woff2") format("woff2")
-
-body
-  font-family: sans-serif
 
 .fa, .far, .fas
   font-family: "Font Awesome 5 Free"

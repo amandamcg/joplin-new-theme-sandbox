@@ -1,45 +1,71 @@
-summary
+h1, h2, h3, h4, h5, h6, p, ul, li
+  margin: 0
+  padding: 0 0 var(--padding-mid) 0
+
+.header
+  padding: var(--padding-mid) var(--padding-small)
+  display: flex
+  align-items: center
   cursor: pointer
 
-  &:focus
-    outline: none
-
-  &::-webkit-details-marker,
-  &::marker
-    display: none
-
-  &::before
-    content: "•"
-    font-size: 8px
-    padding-right: var(--padding-small)
+  i
+    padding-right: var(--padding-ex-small)
+    width: var(--padding-mid)
     display: inline-block
+    font-size: 1em
+    vertical-align: middle
 
-ul
-  list-style-type: none
-  padding: 0
-  margin: 0
-
-li
-  padding: var(--padding-small) 0
+  i + i
+    padding-right: var(--padding-small)
 
   span
-    padding: 0 var(--padding-mid)
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  button
+    margin-left: auto
+    margin-right: var(--padding-small)
+
+.list-item-container
+  padding: var(--padding-small)
+  display: flex
+  cursor: pointer
+
+  div
+    min-width: var(--padding-small)
+    padding-left: 18px
 
 .list-item-depth-0
-  span
-    padding: 0 calc(var(--padding-mid))
+  div + div
+    padding-left: var(--padding-small)
 
 .list-item-depth-1
-  span
-    padding: 0 calc(var(--padding-mid) + var(--padding-mid))
+  div
+    padding-left: 36px
+
+  div + div
+    padding-left: var(--padding-small)
 
 .list-item-depth-2
-  span
-    padding: 0 calc(var(--padding-mid) + var(--padding-mid) + var(--padding-mid))
+  div
+    padding-left: 52px
+
+  div + div
+    padding-left: var(--padding-small)
 
 .list-item-depth-3
-  span
-    padding: 0 calc(var(--padding-mid) + var(--padding-mid) + var(--padding-mid) + var(--padding-mid))
+  div
+    padding-left: 68px
+
+  div + div
+    padding-left: var(--padding-small)
+
+i.fa-chevron-down, i.fa-chevron-right
+  font-size: var(--padding-small)
+
+.count
+  padding-left: var(--padding-small)
 
 .row
   display: flex
@@ -48,72 +74,102 @@ ul.row
   margin: 0
   padding: 0
 
-.header
-  width: 200px
-
-  span
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-
-  button
-    display: inline
-
-.count
-  display: inline-block
-
 body
   display: grid
   grid-template-areas: "panel_1 panel_2 panel_3"
-  grid-template-columns: 200px 1fr 4fr
+  grid-template-columns: 190px 260px 4fr
   margin: 0
 
-#panel-1
+.side-bar
   display: flex
   flex-direction: column
-  height: 100vh
-  overflow: scroll
+  padding: var(--padding-mid) 0 0
+  height: calc( 100vh - var(--padding-mid) )
 
-#panel-2
+  > div:first-child
+    height: 100%
+    overflow: scroll
+
+  #sync-status
+    padding: var(--padding-mid)
+    align-self: flex-end
+
+    small
+      display: block
+      margin-bottom: var(--padding-small)
+
+    i
+      padding-right: var(--padding-small)
+
+.note-list
   display: flex
   flex-direction: column
-  height: 100vh
   overflow: scroll
+  padding: var(--padding-mid) 0
 
-#panel-3
+  #add-new
+    display: flex
+    padding: var(--padding-small) var(--padding-mid)
+
+    button:first-child
+      margin-right: var(--padding-mid)
+
+  .list-item-container
+    padding: 0 var(--padding-mid)
+
+    div
+      padding: var(--padding-mid) 0
+      width: 100%
+
+      input
+        margin-right: var(--padding-small)
+
+#note-breadcrumb
+  div
+    padding-right: var(--padding-small)
+
+#note-edit
+  padding-right: var(--padding-large)
+
+#note-render
+  padding-left: var(--padding-large)
+
+.note-panel
   display: grid
-  grid-template-areas: "note_headline note_headline note_headline note_headline note_timestamp note_metadata" "note_navigation note_tools note_tools note_tools note_view note_view" "note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb" "note_edit note_edit note_edit note_render note_render note_render" "note_tags note_tags note_tags note_tags note_tags note_tags"
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-template-areas: "note_headline note_headline note_headline note_headline note_metadata note_metadata" "note_navigation note_tools note_tools note_tools note_tools note_view" "note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb" "note_edit note_edit note_edit note_render note_render note_render" "note_tags note_tags note_tags note_tags note_tags note_tags"
+  grid-template-columns: minmax(90px, 1fr) 1fr 1fr 1fr 1fr minmax(131px, 1fr)
+  grid-template-rows: 20px 66px 26px 1fr 15px
+  padding: var(--padding-large)
+  min-width: 510px
 
-#all-notes
-  grid-area: all_notes
+  // column-gap: var(--padding-small)
+  // row-gap: var(--padding-small)
+  //
+  // > *
+  //   background-color: red !important
 
-#all-notebooks
-  grid-area: all_notebooks
+#note-edit, #note-render
+  overflow: scroll
+  max-height: calc(100vh - 32px - 26px - 26px -  var(--padding-large) - var(--padding-large) - var(--padding-large) - var(--padding-large))
 
-#all-tags
-  grid-area: all_tags
+#note-metadata
+  display: flex
+  align-items: center
+  vertical-align: middle
+  justify-content: flex-end
 
-#sync-status
-  grid-area: sync
+#note-navigation, #note-tools, #note-view
+  margin: var(--padding-mid) 0
+  padding: var(--padding-small)
 
-#new-note
-  grid-area: new
-
-#search-notes
-  grid-area: search
-
-#current-notebook
-  grid-area: current_notebook
+#note-view, #note-metadata
+  text-align: right
 
 #note-headline
   grid-area: note_headline
 
 #note-metadata
   grid-area: note_metadata
-
-#note-timestamp
-  grid-area: note_timestamp
 
 #note-navigation
   grid-area: note_navigation
@@ -136,11 +192,11 @@ body
 #note-tags
   grid-area: note_tags
 
-#panel-1
+.side-bar
   grid-area: panel_1
 
-#panel-2
+.note-list
   grid-area: panel_2
 
-#panel-3
+.note-panel
   grid-area: panel_3

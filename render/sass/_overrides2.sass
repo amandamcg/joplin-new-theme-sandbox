@@ -1,0 +1,27 @@
+.note-panel
+  display: grid
+  grid-template-areas: "note_tools note_tools note_tools note_metadata note_metadata note_view" "note_navigation note_breadcrumb note_tags note_tags note_tags note_tags" "note_edit note_edit note_edit note_render note_render note_render"
+  grid-template-columns: minmax(90px, 1fr) 1fr 1fr 1fr 1fr minmax(131px, 1fr)
+  grid-template-rows: 66px 60px 1fr
+  padding: var(--padding-small) var(--padding-mid)
+  min-width: 510px
+
+#note-edit, #note-render
+  overflow: scroll
+  max-height: calc(100vh - 32px - 26px -  var(--padding-large) - var(--padding-large) - var(--padding-large) - var(--padding-large))
+
+#note-navigation
+  padding: 0
+  margin: 0
+  background-color: var(--color-1)
+
+#note-headline
+  display: none
+
+#note-metadata
+  background-color: var(--color-2)
+  margin: var(--padding-mid) 0
+  padding: var(--padding-small)
+
+  button
+    background-color: var(--color-2)

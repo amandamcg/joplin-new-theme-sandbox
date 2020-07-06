@@ -27,6 +27,20 @@
   --darken-1: brightness(95%);
   --darken-2: brightness(85%); }
 
+:root {
+  --color-1: #1A1B22;
+  --color-2: #313440;
+  --color-3: #282a34;
+  --color-4: #B8C3CD;
+  --color-5: #DADEE2;
+  --color-6: #D0D2D4;
+  --color-7: #DCDCDC;
+  --color-side-bar: var(--color-3);
+  --color-side-bar-text: var(--color-4);
+  --color-side-bar-selected: var(--color-primary);
+  --border-base: 1px solid var(--color-1);
+  --border-light: 1px solid var(--color-2); }
+
 h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
   padding: 0 0 var(--padding-mid) 0; }
@@ -386,4 +400,4 @@ button {
     .search-wrapper input:focus {
       outline: none; }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main-dark-mode.css.map */

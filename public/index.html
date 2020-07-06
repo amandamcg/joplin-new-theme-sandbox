@@ -9,138 +9,199 @@
     <link media="(prefers-color-scheme: dark)" type="text/css" rel="stylesheet" href="css/main-dark-mode.css">
   </head>
   <body>
-    <div id="panel-1">
-      <div id="all-notes">
-        <div class="header"><i class="fas fa-clone"></i><span>All Notes</span></div>
-      </div>
-      <div id="all-notebooks">
-        <details open>
-          <summary>
-            <div class="header"> <i class="fas fa-book"></i><span>Notebooks</span>
-              <button class="secondary">+</button>
+    <div class="side-bar">
+      <div>
+        <div id="all-notes">
+          <div class="header"><i></i><i class="fas fa-clone"></i><span>All Notes</span></div>
+        </div>
+        <div id="all-notebooks">
+          <div class="header"> <i class="fas fa-chevron-down"></i><i class="fas fa-book"></i><span>Notebooks</span>
+            <button class="inline"> <i class="fas fa-plus"></i></button>
+          </div>
+          <div class="folders">
+            <div class="list-item-container list-item-depth-0">
+              <div></div>
+              <div>A Prender<span class="count">8</span></div>
             </div>
-          </summary>
-          <ul class="list-item-depth-0">
-            <li class="list-item-container"> 
-              <details open>
-                <summary> <span>A Prender
-                    <div class="count">8</div></span></summary>
-                <ul class="list-item-depth-1">
-                  <li class="selected list-item-container"><span>Courses
-                      <div class="count">12</div></span></li>
-                  <li class="list-item-container"><span>Divers
-                      <div class="count">5</div></span></li>
-                  <li class="list-item-container">
-                    <details open>
-                      <summary> <span>Enterprise
-                          <div class="count">23</div></span></summary>
-                      <ul class="list-item-depth-2">
-                        <li class="list-item-container"> <span>Recipes
-                            <div class="count">3</div></span></li>
-                        <li class="list-item-container"> <span>Bookmarks
-                            <div class="count">8</div></span></li>
-                        <li class="list-item-container"> <span>Tickets
-                            <div class="count">12</div></span></li>
-                      </ul>
-                    </details>
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
-        </details>
+            <div class="list-item-container list-item-depth-0">
+              <div><i class="fas fa-chevron-right"></i></div>
+              <div>Courses<span class="count">12</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-0">
+              <div><i class="fas fa-chevron-down"></i></div>
+              <div>Divers<span class="count">5</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div></div>
+              <div>Enterprise<span class="count">23</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div><i class="fas fa-chevron-down"></i></div>
+              <div>Recipes<span class="count">3</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-2 selected">
+              <div> <i class="fas fa-chevron-down"></i></div>
+              <div>Bookmarks<span class="count">8</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-2">
+              <div></div>
+              <div>Bookmarks<span class="count">8</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div></div>
+              <div>Tickets<span class="count">12</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div></div>
+              <div>Enterprise<span class="count">23</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div><i class="fas fa-chevron-down"></i></div>
+              <div>Recipes<span class="count">3</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-2">
+              <div> <i class="fas fa-chevron-down"></i></div>
+              <div>Bookmarks<span class="count">8</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-2">
+              <div></div>
+              <div>Bookmarks<span class="count">8</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div></div>
+              <div>Tickets<span class="count">12</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div></div>
+              <div>Enterprise<span class="count">23</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div><i class="fas fa-chevron-down"></i></div>
+              <div>Recipes<span class="count">3</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-2">
+              <div> <i class="fas fa-chevron-down"></i></div>
+              <div>Bookmarks<span class="count">8</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-2">
+              <div></div>
+              <div>Bookmarks<span class="count">8</span></div>
+            </div>
+            <div class="list-item-container list-item-depth-1">
+              <div></div>
+              <div>Tickets<span class="count">12                                </span></div>
+            </div>
+          </div>
+        </div>
+        <div id="all-tags">
+          <div class="header"> <i class="fas fa-chevron-down"></i><i class="fas fa-tags"></i><span>Tags</span></div>
+          <div class="list-item-container list-item-depth-0">
+            <div></div>
+            <div>one<span class="count">1</span></div>
+          </div>
+          <div class="list-item-container list-item-depth-0">
+            <div></div>
+            <div>two<span class="count">1</span></div>
+          </div>
+        </div>
       </div>
-      <div id="all-tags">
-        <details open>
-          <summary>
-            <div class="header"> <i class="fas fa-tags"></i><span>Tags</span></div>
-          </summary>
-          <ul>
-            <li class="list-item-container"> <span>one
-                <div class="count">1</div></span></li>
-            <li class="list-item-container"> <span>two
-                <div class="count">1</div></span></li>
-          </ul>
-        </details>
-      </div>
-      <div id="sync-status">
-        <p>Completed: 07/02/20 9:24 PM</p>
-        <button>synchronize</button>
+      <div id="sync-status"><small>Completed: 07/02/20 9:24 PM</small>
+        <button class="outline"><i class="fas fa-sync"></i>Synchronize</button>
       </div>
     </div>
-    <div id="panel-2">
+    <div class="note-list">
       <div id="add-new">
-        <button class="secondary">+ new todo</button>
-        <button class="primary">+ new note</button>
+        <button class="secondary"> <i class="fas fa-plus"></i>New to-do</button>
+        <button class="primary"> <i class="fas fa-plus"></i>New note</button>
       </div>
       <div id="search-notes">
-        <input type="text" placeholder="search">
+        <div class="search-wrapper">
+          <input type="text" placeholder="Search"><i class="fas fa-search"></i>
+        </div>
       </div>
       <div id="current-notebook">
-        <ul>
-          <li>Note 1</li>
-          <li class="selected">Note 2</li>
-          <li>
-            <input type="checkbox"> Note 3
-          </li>
-          <li>
-            <input type="checkbox" checked> Note 3
-          </li>
-        </ul>
+        <div class="list-item-container"> 
+          <div>Add support for system theme</div>
+        </div>
+        <div class="list-item-container"> 
+          <div>Importing and exporting notes</div>
+        </div>
+        <div class="list-item-container selected">
+          <div>Welcome to Joplin</div>
+        </div>
+        <div class="list-item-container"> 
+          <div> 
+            <input type="checkbox">Community and further help
+          </div>
+        </div>
+        <div class="list-item-container"> 
+          <div> 
+            <input type="checkbox" checked>Todo important tasks
+          </div>
+        </div>
       </div>
     </div>
-    <div id="panel-3">
+    <div class="note-panel">
       <div id="note-headline">
-        <h1>Welcome to Joplin</h1>
+        <div class="title">Welcome to Joplin</div>
       </div>
       <div id="note-metadata">
-        <button>info</button>
-      </div>
-      <div id="note-timestamp"> 
-        <div>16/06/2020 </div>
-        <div>10:21</div>
+        <div>16/06/2020 <span>10:21</span></div>
+        <button> <i class="fas fa-info-circle"></i></button>
       </div>
       <div id="note-navigation">
-        <button><</button>
-        <button>></button>
+        <button> <i class="fas fa-arrow-left"></i></button>
+        <button> <i class="fas fa-arrow-right"></i></button>
       </div>
       <div id="note-tools">
-        <button>B</button>
-        <button>I</button>
-        <button>H</button>
-        <button>*</button>
-        <button>1. </button>
-        <button>[x]</button>
-        <button>%</button>
-        <button>&lt;/&gt;</button>
-        <button>@</button>
-        <button>+</button>
+        <button> <i class="fas fa-bold"></i></button>
+        <button> <i class="fas fa-italic"></i></button>
+        <button> <i class="fas fa-heading"></i></button>
+        <button> <i class="fas fa-ellipsis-h"></i></button>
+        <button> <i class="fas fa-list-ul"></i></button>
+        <button> <i class="fas fa-list-ol"></i></button>
+        <button> <i class="fas fa-check-square"></i></button>
+        <button> <i class="fas fa-link"></i></button>
+        <button><i class="fas fa-code"></i></button>
+        <button> <i class="fas fa-paperclip"></i></button>
+        <button> <i class="fas fa-calendar"></i></button>
       </div>
       <div id="note-view">
-        <button>layout</button>
-        <button>WYSIWYG</button>
-        <button>MD</button>
-        <button>-></button>
+        <button class="selected">M<i class="fas fa-arrow-down"></i></button>
+        <button><i class="fas fa-columns"></i></button>
+        <button> <i class="fas fa-share-square"></i></button>
       </div>
       <div id="note-breadcrumb">
         <div class="row">
-          <div>In</div>
+          <div>In: </div>
           <div> <a href="#">A Prender</a></div>
         </div>
       </div>
       <div id="note-edit">
         <div>
-          <h1> Welcome to Joplin! 🗒️</h1>
+          <p class="color"># Welcome to Joplin!</p>
           <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
           <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
           <p>![](./AllClients.png)</p>
-          <h2>Joplin is divided into three parts</h2>
+          <p class="color">## Joplin is divided into three parts</p>
+          <p>Joplin has three main columns:</p>
+          <p class="color"># Welcome to Joplin!</p>
+          <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
+          <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
+          <p>![](./AllClients.png)</p>
+          <p class="color">## Joplin is divided into three parts</p>
           <p>Joplin has three main columns:</p>
         </div>
       </div>
       <div id="note-render">
         <div>
-          <h1> Welcome to Joplin! 🗒️</h1>
+          <h1> Welcome to Joplin!</h1>
+          <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
+          <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
+          <p>![](./AllClients.png)</p>
+          <h2>Joplin is divided into three parts</h2>
+          <p>Joplin has three main columns:</p>
+          <h1> Welcome to Joplin!</h1>
           <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
           <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
           <p>![](./AllClients.png)</p>
@@ -149,13 +210,11 @@
         </div>
       </div>
       <div id="note-tags">
-        <ul class="row">
-          <li>tag 1</li>
-          <li>tag 2</li>
-          <li> 
-            <button>add more tags</button>
-          </li>
-        </ul>
+        <button>tag1</button>
+        <button>welcome</button>
+        <button>notes</button>
+        <button>joplin</button>
+        <button>markdown</button><a>Add more tags ...</a>
       </div>
     </div>
   </body>

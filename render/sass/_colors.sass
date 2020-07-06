@@ -1,28 +1,82 @@
 body
+  background-color: var(--color-1)
   color: var(--color-6)
 
 .header
+  background-color: var(--color-side-bar)
   color: var(--color-5)
 
-#panel-1
-  background-color: var(--color-6)
-  color: var(--color-2)
+  &:hover
+    filter: var(--darken-2)
+
+.side-bar
+  background-color: var(--color-side-bar)
+  color: var(--color-side-bar-text)
+
+  .list-item-container
+    background-color: var(--color-side-bar)
+
+    div:first-child
+      color: var(--color-5)
+
+    &:hover
+      filter: var(--darken-2)
 
   .selected
-    background: var(--color-7)
+    background: var(--color-side-bar-selected)
     color: var(--color-1)
 
   .count
     color: var(--color-5)
 
-#panel-2
+.note-list
   background-color: var(--color-2)
   color: var(--color-6)
 
-  .selected
-    background: var(--color-4)
+  .list-item-container
+    background-color: var(--color-2)
 
-summary
-  &::-webkit-details-marker,
-  &::marker
-    color: var(--color-4)
+    div
+      border-bottom: var(--border-light)
+
+    &:hover
+      filter: var(--darken-1)
+
+  .selected
+    background: var(--color-3)
+
+#sync-status
+  small
+    color: var(--color-5)
+
+#note-navigation, #note-tools, #note-view
+  background-color: var(--color-2)
+
+  button
+    background-color: var(--color-2)
+    color: var(--color-5)
+
+    &.selected
+      color: var(--color-primary)
+
+#note-breadcrumb
+  color: var(--color-primary)
+
+  a
+    color: var(--color-primary)
+
+#note-metadata
+  color: var(--color-5)
+
+  i
+    color: var(--color-5)
+
+#note-edit
+  border-right: var(--border-light)
+
+.color
+  color: var(--color-header)
+
+#note-tags
+  a
+    color: var(--color-primary)
