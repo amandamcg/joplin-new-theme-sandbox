@@ -4,12 +4,12 @@ The goal of this project is to construct the new theme and use it as an opportun
 https://discourse.joplinapp.org/t/desktop-new-design-is-nearly-ready-please-cast-your-final-vote/9698/43
 
 # tl;dr
-1. You can see the theme in action by downloading and viewing the public folder.
-2. Swap the themes by changing the index.html file at line 8
+1. You can see the themes in action by downloading and viewing the public folder.
+2. Switch the themes by changing the `index.html` file at `line 8`
 3. If you cannot see the icon font, see the "simple server" instructions below.
 
-## themes
-All the themes were built off the base theme, changing the variables.
+## Themes
+All the themes were built off the base theme, generally just changing the variables.
 
 ## screenshots
 ### base theme
@@ -19,10 +19,6 @@ All the themes were built off the base theme, changing the variables.
 ![dark-mode](/screenshots/dark-mode.png)
 
 
-### dark mode w/ overrides
-in this example, all the navigation elements are moved to the bottom
-![dark-mode](/screenshots/dark-mode-overrides.png)
-
 ### southwest
 I'm not advocating for this theme, mostly showing that its really fast to take any color palette and derive a theme. This was a random palette from [http://coolors.co](http://coolors.co)
 ![southwest](/screenshots/southwest.png)
@@ -30,6 +26,12 @@ I'm not advocating for this theme, mostly showing that its really fast to take a
 ### monochrome
 another random example, in this case I also simplified the indenting
 ![monochrome](/screenshots/monochrome.png)
+
+
+
+### dark mode w/ overrides
+This is the most complex example. In here, all the navigation elements are moved to the bottom by using a different note grid definition.
+![dark-mode](/screenshots/dark-mode-overrides.png)
 
 Note: The base theme design was done by a different designer, I am just implementing the CSS. More info here: [designer discussion](https://discourse.joplinapp.org/t/joplin-new-design-feedback-is-welcome-20-june-update-version-4-is-ready/9324/36?u=uxamanda)
 
@@ -59,5 +61,16 @@ sass --update --force  render/sass/:public/css/
                 sass --watch render/sass/:public/css/
 ```
 
+SASS Structure
+- `_base_layout` - this is the main structure of the body and the sidebars
+- `_note_layout` - this is the structure of the note panel
+- `_colors` - defines colors throughout
+- `_typography` -  defines type throughout
+- `_actions` - defines buttons, search, and the fancy todo checkboxes
+
+You'll notice that because it is broken up like this, you get the same classes defined more than once. I have found it much easier to work on large projects when the css is split in this way, since you are generally working on type at once, then color, etc. When they are split by class, it is harder to keep the styles tight.
+
+
+# Commit History
 ## 0.0.1
 initial push
