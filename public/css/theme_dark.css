@@ -33,6 +33,7 @@
   --side-bar-width: 180px;
   --note-list-width: 260px; }
 
+/* Dark theme variable overrides */
 :root {
   --color-1: #1A1B22;
   --color-2: #313440;

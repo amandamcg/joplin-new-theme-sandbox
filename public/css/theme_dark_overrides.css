@@ -33,6 +33,7 @@
   --side-bar-width: 180px;
   --note-list-width: 260px; }
 
+/* Dark theme variable overrides */
 :root {
   --color-1: #1A1B22;
   --color-2: #313440;
@@ -503,6 +504,7 @@ button {
       text-decoration: line-through;
       opacity: 0.4; }
 
+/* Overrides to grid */
 .note-panel {
   display: grid;
   grid-template-areas: "note_title note_title note_title note_title note_metadata note_metadata" "note_tools note_tools note_tools note_tools note_tools note_view" "note_edit note_edit note_edit note_render note_render note_render" "note_navigation note_breadcrumb note_tags note_tags note_tags note_tags";

@@ -33,6 +33,7 @@
   --side-bar-width: 180px;
   --note-list-width: 260px; }
 
+/* Southwest theme variable overrides */
 :root {
   --color-primary: #BB4430;
   --color-1: #EFE6DD;
