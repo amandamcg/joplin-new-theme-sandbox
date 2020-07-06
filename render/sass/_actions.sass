@@ -1,4 +1,5 @@
 button
+  // base + used for toolbars
   background-color: var(--color-1)
   border-radius: var(--border-radius)
   border: 0
@@ -7,40 +8,41 @@ button
   line-height: 1em
   padding: calc(var(--padding-small) / 2)
 
-  i
-    padding-right: var(--padding-small)
-
+  // darkens the buttons
   &:hover
     filter: var(--darken-1)
 
-  &.primary
+  // used for new note
+  &.new-note-button
     border: var(--border-base-primary)
     background-color: var(--color-primary)
     color: var(--color-1)
     padding: var(--padding-small)
-    width: 50%
 
-  &.secondary
+  // used for new todo
+  &.new-todo-button
     border: var(--border-base-primary)
     background-color: var(--color-1)
     color: var(--color-primary)
     padding: var(--padding-small)
-    width: 50%
 
-  &.inline
+  // used for new notebook
+  &.new-notebook-button
     border: var(--border-base-primary)
     background-color: var(--color-1)
     color: var(--color-primary)
     padding: var(--padding-ex-small)
 
-  &.outline
+  // used for sync
+  &.sync-button
     border: var(--border-base)
     background-color: var(--color-side-bar)
     color: var(--color-5)
     width: 100%
     padding: var(--padding-small) 0
 
-#note-tags
+// tags
+.note-tags
   button
     background-color: var(--color-2)
     color: var(--color-5)
@@ -48,12 +50,10 @@ button
     border-radius: 100px
     margin: 0
 
-  a
-    padding-left: var(--padding-mid)
-
+// search
 .search-wrapper
   display: flex
-  border: var(--border-base)
+  border: var(--border-light)
   border-radius: var(--border-radius)
   margin: var(--padding-small) var(--padding-mid)
   background-color: var(--color-1)
@@ -70,6 +70,64 @@ button
     width: calc(100% - var(--padding-mid) - var(--padding-mid) - var(--padding-small) - var(--padding-small))
     border: none
     background-color: var(--color-1)
+    color: var(--color-7)
 
     &:focus
       outline: none
+
+// fancy checkbox styles
+.current-notebook
+  // hide the normal checkbox
+  input
+    display: none
+
+  label
+    display: flex
+    flex-direction: row
+    flex-wrap: nowrap
+    justify-content: flex-start
+    align-items: center
+
+  .pseudo-checkbox
+    display: flex
+    align-self: center
+    position: relative
+    height: 1em
+    width: 1em
+    min-width: 1em
+    border: var(--border-base)
+    cursor: pointer
+    margin-right: var(--padding-small)
+
+  label span + span
+    display: flex
+    align-self: center
+    position: relative
+    cursor: pointer
+
+  // when the checkbox is checked...
+  input:checked + label
+    color: var(--color-5)
+    font-style: italic
+    text-decoration: line-through
+
+    .pseudo-checkbox
+      background-color: var(--color-primary)
+      border: var(--border-base-primary)
+
+      // checkmark
+      &:after
+        content: ""
+        display: block
+        position: absolute
+        top: calc(1em / 12)
+        left: calc(1em / 4)
+        width: calc(1em / 4)
+        height: calc(1em / 2)
+        border: solid var(--color-1)
+        border-width: 0 var(--padding-ex-small) var(--padding-ex-small) 0
+        transform: rotate(45deg)
+
+    span + span
+      text-decoration: line-through
+      opacity: 0.4

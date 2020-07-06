@@ -22,18 +22,19 @@ html(lang="en")
             )
     body
         .side-bar
-            div
-                #all-notes
+            .side-bar-scroll
+                .all-notes
                     .header
-                        i
+                        div
                         i.fas.fa-clone
                         span All Notes
-                #all-notebooks
+                .all-notebooks
                     .header 
-                        i.fas.fa-chevron-down
+                        div
+                            i.fas.fa-chevron-down
                         i.fas.fa-book
                         span Notebooks
-                        button.inline 
+                        button.new-notebook-button 
                             i.fas.fa-plus
                     .folders
                         .list-item-container.list-item-depth-0
@@ -116,9 +117,10 @@ html(lang="en")
                             div
                             div Tickets
                                 span.count 12                                
-                #all-tags
+                .all-tags
                     .header 
-                        i.fas.fa-chevron-down
+                        div
+                            i.fas.fa-chevron-down
                         i.fas.fa-tags
                         span Tags
                     .list-item-container.list-item-depth-0
@@ -129,52 +131,62 @@ html(lang="en")
                         div
                         div two
                             span.count 1
-            #sync-status
+            .sync-status
                 small Completed: 07/02/20 9:24 PM
-                button.outline
+                button.sync-button
                     i.fas.fa-sync
                     | Synchronize
         .note-list
-            #add-new
-                button.secondary 
+            .add-new
+                button.new-todo-button 
                     i.fas.fa-plus
-                    | New to-do
-                button.primary 
+                    span New to-do
+                button.new-note-button 
                     i.fas.fa-plus
-                    | New note
-            #search-notes
+                    span New note
+            .search-notes
                 .search-wrapper
                     input(type='text', placeholder='Search')
                     i.fas.fa-search
-            #current-notebook
+            .current-notebook
+                // enable this to see a searched list item
+                // .list-item-container 
+                    div Add 
+                        span.searched support 
+                        | for system theme
                 .list-item-container 
-                    div Add support for system theme
-                .list-item-container 
-                    div Importing and exporting notes
+                    div 
+                        span Importing and exporting notes
                 .list-item-container.selected
-                    div Welcome to Joplin
+                    div 
+                        span Welcome to Joplin
                 .list-item-container 
                     div 
-                        input(type="checkbox") 
-                        | Community and further help
+                        input(id="first", type="checkbox") 
+                        label(for="first") 
+                            span.pseudo-checkbox
+                            span Community and further help with a really long names
                 .list-item-container 
-                    div 
-                        input(type="checkbox", checked) 
-                        | Todo important tasks
+                    div
+                        input(id="second", type="checkbox") 
+                        label(for="second") 
+                            span.pseudo-checkbox
+                            span Todo important tasks
+
+
         .note-panel
-            #note-headline
-                .title Welcome to Joplin
-            #note-metadata
+            .note-title Welcome to Joplin
+            .note-metadata
                 div 16/06/2020 
                     span 10:21
                 button 
                     i.fas.fa-info-circle
-            #note-navigation
+            .note-navigation
                 button 
                     i.fas.fa-arrow-left
                 button 
                     i.fas.fa-arrow-right
-            #note-tools
+            .note-tools
                 button 
                     i.fas.fa-bold
                 button 
@@ -197,19 +209,19 @@ html(lang="en")
                     i.fas.fa-paperclip
                 button 
                     i.fas.fa-calendar
-            #note-view
-                button.selected M
-                    i.fas.fa-arrow-down
+            .note-view
+                button.selected
+                    span(style="white-space:nowrap") M
+                        i.fas.fa-arrow-down
                 button
                     i.fas.fa-columns
                 button 
                     i.fas.fa-share-square
-            #note-breadcrumb
-                .row
-                    div In: 
-                    div 
-                        a(href="#") A Prender
-            #note-edit
+            .note-breadcrumb
+                div In: 
+                div 
+                    a(href="#") A Prender
+            .note-edit
                 div
                     p.color # Welcome to Joplin!
 
@@ -233,7 +245,7 @@ html(lang="en")
                     p.color ## Joplin is divided into three parts
 
                     p Joplin has three main columns:
-            #note-render
+            .note-render
                 div
                     h1  Welcome to Joplin!
 
@@ -258,10 +270,11 @@ html(lang="en")
 
                     p Joplin has three main columns:
 
-            #note-tags
-                button tag1
-                button welcome
-                button notes
-                button joplin
-                button markdown
-                a Add more tags ...
+            .note-tags
+                div
+                    button tag1
+                    button welcome
+                    button notes
+                    button joplin
+                    button markdown
+                a(href="#") Add more tags ...

@@ -1,7 +1,9 @@
+//font sizes
+
 body
   font-size: var(--font-base)
 
-.title
+.note-title
   font-size: calc( var(--ratio) * var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base))
 
 h1
@@ -19,9 +21,10 @@ h4
 p, li, fieldset, input, label, button
   font-size: var(--font-base)
 
-button, .header, #note-metadata
+button, .header, .note-metadata
   font-size: calc(var(--font-base) / var(--ratio))
 
+// font family and style
 body
   font-family: "Trebuchet MS", Helvetica, sans-serif
   letter-spacing: var(--letter-spacing)
@@ -30,15 +33,20 @@ body
   text-transform: uppercase
   letter-spacing: var(--letter-spacing-wide)
 
-.title
+.note-title
   font-weight: bold
 
-#note-edit
+.note-edit
   font-family: monospace
 
-#note-edit, #note-render
+.note-edit, .note-render
   line-height: var(--line-height)
 
+.note-tags
+  a
+    text-decoration: none
+
+// icon font
 @font-face
   font-family: "Font Awesome 5 Free"
   src: local("forkawesome-webfont"), url("/fonts/forkawesome-webfont.woff2") format("woff2")

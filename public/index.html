@@ -10,13 +10,16 @@
   </head>
   <body>
     <div class="side-bar">
-      <div>
-        <div id="all-notes">
-          <div class="header"><i></i><i class="fas fa-clone"></i><span>All Notes</span></div>
+      <div class="side-bar-scroll">
+        <div class="all-notes">
+          <div class="header">
+            <div></div><i class="fas fa-clone"></i><span>All Notes</span>
+          </div>
         </div>
-        <div id="all-notebooks">
-          <div class="header"> <i class="fas fa-chevron-down"></i><i class="fas fa-book"></i><span>Notebooks</span>
-            <button class="inline"> <i class="fas fa-plus"></i></button>
+        <div class="all-notebooks">
+          <div class="header"> 
+            <div><i class="fas fa-chevron-down"></i></div><i class="fas fa-book"></i><span>Notebooks</span>
+            <button class="new-notebook-button"> <i class="fas fa-plus"></i></button>
           </div>
           <div class="folders">
             <div class="list-item-container list-item-depth-0">
@@ -93,8 +96,10 @@
             </div>
           </div>
         </div>
-        <div id="all-tags">
-          <div class="header"> <i class="fas fa-chevron-down"></i><i class="fas fa-tags"></i><span>Tags</span></div>
+        <div class="all-tags">
+          <div class="header"> 
+            <div><i class="fas fa-chevron-down"></i></div><i class="fas fa-tags"></i><span>Tags</span>
+          </div>
           <div class="list-item-container list-item-depth-0">
             <div></div>
             <div>one<span class="count">1</span></div>
@@ -105,55 +110,58 @@
           </div>
         </div>
       </div>
-      <div id="sync-status"><small>Completed: 07/02/20 9:24 PM</small>
-        <button class="outline"><i class="fas fa-sync"></i>Synchronize</button>
+      <div class="sync-status"><small>Completed: 07/02/20 9:24 PM</small>
+        <button class="sync-button"><i class="fas fa-sync"></i>Synchronize</button>
       </div>
     </div>
     <div class="note-list">
-      <div id="add-new">
-        <button class="secondary"> <i class="fas fa-plus"></i>New to-do</button>
-        <button class="primary"> <i class="fas fa-plus"></i>New note</button>
+      <div class="add-new">
+        <button class="new-todo-button"> <i class="fas fa-plus"></i><span>New to-do</span></button>
+        <button class="new-note-button"> <i class="fas fa-plus"></i><span>New note</span></button>
       </div>
-      <div id="search-notes">
+      <div class="search-notes">
         <div class="search-wrapper">
           <input type="text" placeholder="Search"><i class="fas fa-search"></i>
         </div>
       </div>
-      <div id="current-notebook">
+      <div class="current-notebook">
+        <!-- enable this to see a searched list item-->
+        <!-- .list-item-container 
+        div Add 
+            span.searched support 
+            | for system theme
+        -->
         <div class="list-item-container"> 
-          <div>Add support for system theme</div>
-        </div>
-        <div class="list-item-container"> 
-          <div>Importing and exporting notes</div>
+          <div> <span>Importing and exporting notes</span></div>
         </div>
         <div class="list-item-container selected">
-          <div>Welcome to Joplin</div>
+          <div> <span>Welcome to Joplin</span></div>
         </div>
         <div class="list-item-container"> 
           <div> 
-            <input type="checkbox">Community and further help
+            <input id="first" type="checkbox">
+            <label for="first"> <span class="pseudo-checkbox"></span><span>Community and further help with a really long names</span></label>
           </div>
         </div>
         <div class="list-item-container"> 
-          <div> 
-            <input type="checkbox" checked>Todo important tasks
+          <div>
+            <input id="second" type="checkbox">
+            <label for="second"> <span class="pseudo-checkbox"></span><span>Todo important tasks</span></label>
           </div>
         </div>
       </div>
     </div>
     <div class="note-panel">
-      <div id="note-headline">
-        <div class="title">Welcome to Joplin</div>
-      </div>
-      <div id="note-metadata">
+      <div class="note-title">Welcome to Joplin</div>
+      <div class="note-metadata">
         <div>16/06/2020 <span>10:21</span></div>
         <button> <i class="fas fa-info-circle"></i></button>
       </div>
-      <div id="note-navigation">
+      <div class="note-navigation">
         <button> <i class="fas fa-arrow-left"></i></button>
         <button> <i class="fas fa-arrow-right"></i></button>
       </div>
-      <div id="note-tools">
+      <div class="note-tools">
         <button> <i class="fas fa-bold"></i></button>
         <button> <i class="fas fa-italic"></i></button>
         <button> <i class="fas fa-heading"></i></button>
@@ -166,18 +174,16 @@
         <button> <i class="fas fa-paperclip"></i></button>
         <button> <i class="fas fa-calendar"></i></button>
       </div>
-      <div id="note-view">
-        <button class="selected">M<i class="fas fa-arrow-down"></i></button>
+      <div class="note-view">
+        <button class="selected"><span style="white-space:nowrap">M<i class="fas fa-arrow-down"></i></span></button>
         <button><i class="fas fa-columns"></i></button>
         <button> <i class="fas fa-share-square"></i></button>
       </div>
-      <div id="note-breadcrumb">
-        <div class="row">
-          <div>In: </div>
-          <div> <a href="#">A Prender</a></div>
-        </div>
+      <div class="note-breadcrumb">
+        <div>In: </div>
+        <div> <a href="#">A Prender</a></div>
       </div>
-      <div id="note-edit">
+      <div class="note-edit">
         <div>
           <p class="color"># Welcome to Joplin!</p>
           <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
@@ -193,7 +199,7 @@
           <p>Joplin has three main columns:</p>
         </div>
       </div>
-      <div id="note-render">
+      <div class="note-render">
         <div>
           <h1> Welcome to Joplin!</h1>
           <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
@@ -209,12 +215,14 @@
           <p>Joplin has three main columns:</p>
         </div>
       </div>
-      <div id="note-tags">
-        <button>tag1</button>
-        <button>welcome</button>
-        <button>notes</button>
-        <button>joplin</button>
-        <button>markdown</button><a>Add more tags ...</a>
+      <div class="note-tags">
+        <div>
+          <button>tag1</button>
+          <button>welcome</button>
+          <button>notes</button>
+          <button>joplin</button>
+          <button>markdown</button>
+        </div><a href="#">Add more tags ...</a>
       </div>
     </div>
   </body>
