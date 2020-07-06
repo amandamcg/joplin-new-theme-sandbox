@@ -1,32 +1,32 @@
 //font sizes
 
 body
-  font-size: var(--font-base)
+  font-size: var(--font-size-base)
 
 .note-title
-  font-size: calc( var(--ratio) * var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base))
+  font-size: calc( var(--ratio) * var(--ratio) * var(--ratio) *var(--ratio) * var(--font-size-base))
 
 h1
-  font-size: calc( var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base))
+  font-size: calc( var(--ratio) * var(--ratio) *var(--ratio) * var(--font-size-base))
 
 h2
-  font-size: calc( var(--ratio) * var(--ratio) * var(--font-base))
+  font-size: calc( var(--ratio) * var(--ratio) * var(--font-size-base))
 
 h3
-  font-size: calc( var(--ratio) * var(--font-base))
+  font-size: calc( var(--ratio) * var(--font-size-base))
 
 h4
-  font-size: calc( var(--font-base))
+  font-size: calc( var(--font-size-base))
 
 p, li, fieldset, input, label, button
-  font-size: var(--font-base)
+  font-size: var(--font-size-base)
 
 button, .header, .note-metadata
-  font-size: calc(var(--font-base) / var(--ratio))
+  font-size: calc(var(--font-size-base) / var(--ratio))
 
 // font family and style
 body
-  font-family: "Trebuchet MS", Helvetica, sans-serif
+  font-family: var(--font-family-base)
   letter-spacing: var(--letter-spacing)
 
 .header
@@ -37,7 +37,7 @@ body
   font-weight: bold
 
 .note-edit
-  font-family: monospace
+  font-family: var(--font-family-mono)
 
 .note-edit, .note-render
   line-height: var(--line-height)

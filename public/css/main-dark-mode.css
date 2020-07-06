@@ -20,13 +20,15 @@
   --border-base: 1px solid var(--color-4);
   --border-light: 1px solid var(--color-3);
   --border-base-primary: 1px solid var(--color-primary);
-  --font-base: 14px;
+  --darken-1: brightness(95%);
+  --darken-2: brightness(85%);
+  --font-family-base: "Trebuchet MS", Helvetica, sans-serif;
+  --font-family-mono: monospace;
+  --font-size-base: 14px;
   --ratio: 1.1;
   --letter-spacing: 0.0em;
   --letter-spacing-wide: 0.06em;
   --line-height: 1.4em;
-  --darken-1: brightness(95%);
-  --darken-2: brightness(85%);
   --side-bar-width: 180px;
   --note-list-width: 260px; }
 
@@ -300,31 +302,31 @@ body {
   color: var(--color-primary); }
 
 body {
-  font-size: var(--font-base); }
+  font-size: var(--font-size-base); }
 
 .note-title {
-  font-size: calc( var(--ratio) * var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base)); }
+  font-size: calc( var(--ratio) * var(--ratio) * var(--ratio) *var(--ratio) * var(--font-size-base)); }
 
 h1 {
-  font-size: calc( var(--ratio) * var(--ratio) *var(--ratio) * var(--font-base)); }
+  font-size: calc( var(--ratio) * var(--ratio) *var(--ratio) * var(--font-size-base)); }
 
 h2 {
-  font-size: calc( var(--ratio) * var(--ratio) * var(--font-base)); }
+  font-size: calc( var(--ratio) * var(--ratio) * var(--font-size-base)); }
 
 h3 {
-  font-size: calc( var(--ratio) * var(--font-base)); }
+  font-size: calc( var(--ratio) * var(--font-size-base)); }
 
 h4 {
-  font-size: calc( var(--font-base)); }
+  font-size: calc( var(--font-size-base)); }
 
 p, li, fieldset, input, label, button {
-  font-size: var(--font-base); }
+  font-size: var(--font-size-base); }
 
 button, .header, .note-metadata {
-  font-size: calc(var(--font-base) / var(--ratio)); }
+  font-size: calc(var(--font-size-base) / var(--ratio)); }
 
 body {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-family: var(--font-family-base);
   letter-spacing: var(--letter-spacing); }
 
 .header {
@@ -335,7 +337,7 @@ body {
   font-weight: bold; }
 
 .note-edit {
-  font-family: monospace; }
+  font-family: var(--font-family-mono); }
 
 .note-edit, .note-render {
   line-height: var(--line-height); }
