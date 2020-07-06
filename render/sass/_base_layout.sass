@@ -1,6 +1,6 @@
-// base layout
+/* base layout
 
-// main page grid panels
+/* main page grid panels
 .side-bar
   grid-area: side_bar
 
@@ -10,17 +10,17 @@
 .note-panel
   grid-area: note_panel
 
-// main page grid
+/* main page grid
 body
   display: grid
   grid-template-areas: "side_bar note_list note_panel"
 
-  // in the app, the user will drag to change these size
-  // change them in the theme to see how it resizes
+  /* in the app, the user will drag to change these size
+  /* change them in the theme to see how it resizes
   grid-template-columns: var(--side-bar-width) var(--note-list-width) 4fr
   margin: 0
 
-// reset margin and padding for base text styles
+/* reset margin and padding for base text styles
 h1, h2, h3, h4, h5, h6, p, ul, li
   margin: 0
   padding: 0 0 var(--padding-mid) 0
@@ -31,22 +31,22 @@ h1, h2, h3, h4, h5, h6, p, ul, li
   padding: var(--padding-mid) 0 0
   height: calc( 100vh - var(--padding-mid) )
 
-  // make all collapse arrows smaller
+  /* make all collapse arrows smaller
   i.fa-chevron-down, i.fa-chevron-right
     font-size: var(--padding-small) !important
 
-  // make sidebar scroll if more tags / notebooks
+  /* make sidebar scroll if more tags / notebooks
   .side-bar-scroll
     overflow: scroll
 
-  // style header, aka "All Notes, Notebooks, Tags"
+  /* style header, aka "All Notes, Notebooks, Tags"
   .header
     padding: var(--padding-mid) var(--padding-small)
     display: flex
     align-items: center
     cursor: pointer
 
-    // spacer or collapse arrow
+    /* spacer or collapse arrow
     div
       padding-right: var(--padding-ex-small)
       width: var(--padding-mid)
@@ -54,18 +54,18 @@ h1, h2, h3, h4, h5, h6, p, ul, li
       display: flex
       align-items: center
 
-    // icon
+    /* icon
     i
       padding-right: var(--padding-small)
 
-    // this holds the header name
-    // it truncates so you can still see the add new notebook button
+    /* this holds the header name
+    /* it truncates so you can still see the add new notebook button
     span
       white-space: nowrap
       overflow: hidden
       text-overflow: ellipsis
 
-    // add new notebook button
+    /* add new notebook button
     button
       margin-left: auto
       margin-right: var(--padding-ex-small)
@@ -73,13 +73,13 @@ h1, h2, h3, h4, h5, h6, p, ul, li
       i
         padding: var(--padding-ex-small)
 
-  // list item, aka notebook, tag, or note
+  /* list item, aka notebook, tag, or note
   .list-item-container
     padding: var(--padding-small)
     display: flex
     cursor: pointer
 
-    // spacer or collapse arrow
+    /* spacer or collapse arrow
     div
       min-width: var(--padding-small)
       padding-left: var(--indent)
@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li
     div + div
       padding-left: var(--padding-small)
 
-  // indentation for list items
+  /* indentation for list items
   .list-item-depth-0
     div
       padding-left: calc( var(--indent) )
@@ -116,16 +116,16 @@ h1, h2, h3, h4, h5, h6, p, ul, li
     div
       padding-left: calc( var(--indent) * 6 )
 
-  // number of notes or tags
+  /* number of notes or tags
   .count
     padding-left: var(--padding-small)
 
-  // style for sync area
+  /* style for sync area
   .sync-status
     padding: var(--padding-mid)
     align-self: flex-end
 
-    // sync info
+    /* sync info
     small
       display: block
       margin-bottom: var(--padding-small)
@@ -133,14 +133,14 @@ h1, h2, h3, h4, h5, h6, p, ul, li
     i
       padding-right: var(--padding-small)
 
-// add notes + search + notes in current notebook, tag, or search
+/* add notes + search + notes in current notebook, tag, or search
 .note-list
   display: flex
   flex-direction: column
   overflow: scroll
   padding: var(--padding-mid) 0
 
-  // new note and new todo
+  /* new note and new todo
   .add-new
     display: flex
     padding: var(--padding-small) var(--padding-mid)
@@ -155,7 +155,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li
       &:first-child
         margin-right: var(--padding-mid)
 
-  // note list style
+  /* note list style
   .list-item-container
     padding: 0 var(--padding-mid)
 
@@ -163,7 +163,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li
       padding: var(--padding-mid) 0
       width: 100%
 
-      // making overflowing labels truncate
+      /* making overflowing labels truncate
       span:last-child, label span:last-child
         white-space: nowrap
         overflow: hidden

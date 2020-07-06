@@ -1,5 +1,5 @@
 button
-  // base + used for toolbars
+  /* base + used for toolbars
   background-color: var(--color-1)
   border-radius: var(--border-radius)
   border: 0
@@ -8,32 +8,32 @@ button
   line-height: 1em
   padding: calc(var(--padding-small) / 2)
 
-  // darkens the buttons
+  /* darkens the buttons
   &:hover
     filter: var(--darken-1)
 
-  // used for new note
+  /* used for new note
   &.new-note-button
     border: var(--border-base-primary)
     background-color: var(--color-primary)
     color: var(--color-1)
     padding: var(--padding-small)
 
-  // used for new todo
+  /* used for new todo
   &.new-todo-button
     border: var(--border-base-primary)
     background-color: var(--color-1)
     color: var(--color-primary)
     padding: var(--padding-small)
 
-  // used for new notebook
+  /* used for new notebook
   &.new-notebook-button
     border: var(--border-base-primary)
     background-color: var(--color-1)
     color: var(--color-primary)
     padding: var(--padding-ex-small)
 
-  // used for sync
+  /* used for sync
   &.sync-button
     border: var(--border-base)
     background-color: var(--color-side-bar)
@@ -41,7 +41,7 @@ button
     width: 100%
     padding: var(--padding-small) 0
 
-// tags
+/* tags
 .note-tags
   button
     background-color: var(--color-2)
@@ -50,7 +50,7 @@ button
     border-radius: 100px
     margin: 0
 
-// search
+/* search
 .search-wrapper
   display: flex
   border: var(--border-light)
@@ -75,9 +75,9 @@ button
     &:focus
       outline: none
 
-// fancy checkbox styles
+/* fancy checkbox styles
 .current-notebook
-  // hide the normal checkbox
+  /* hide the normal checkbox
   input
     display: none
 
@@ -105,7 +105,7 @@ button
     position: relative
     cursor: pointer
 
-  // when the checkbox is checked...
+  /* when the checkbox is checked...
   input:checked + label
     color: var(--color-5)
     font-style: italic
@@ -115,7 +115,7 @@ button
       background-color: var(--color-primary)
       border: var(--border-base-primary)
 
-      // checkmark
+      /* checkmark
       &:after
         content: ""
         display: block

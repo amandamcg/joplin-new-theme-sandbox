@@ -1,3 +1,4 @@
+/* base theme */
 :root {
   --color-primary: #008EE5;
   --color-1: #FFFFFF;
@@ -32,6 +33,8 @@
   --side-bar-width: 180px;
   --note-list-width: 260px; }
 
+/* base layout */
+/* main page grid panels */
 .side-bar {
   grid-area: side_bar; }
 
@@ -41,12 +44,16 @@
 .note-panel {
   grid-area: note_panel; }
 
+/* main page grid */
 body {
   display: grid;
   grid-template-areas: "side_bar note_list note_panel";
+  /* in the app, the user will drag to change these size */
+  /* change them in the theme to see how it resizes */
   grid-template-columns: var(--side-bar-width) var(--note-list-width) 4fr;
   margin: 0; }
 
+/* reset margin and padding for base text styles */
 h1, h2, h3, h4, h5, h6, p, ul, li {
   margin: 0;
   padding: 0 0 var(--padding-mid) 0; }
@@ -55,7 +62,14 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   display: flex;
   flex-direction: column;
   padding: var(--padding-mid) 0 0;
-  height: calc( 100vh - var(--padding-mid) ); }
+  height: calc( 100vh - var(--padding-mid) );
+  /* make all collapse arrows smaller */
+  /* make sidebar scroll if more tags / notebooks */
+  /* style header, aka "All Notes, Notebooks, Tags" */
+  /* list item, aka notebook, tag, or note */
+  /* indentation for list items */
+  /* number of notes or tags */
+  /* style for sync area */ }
   .side-bar i.fa-chevron-down, .side-bar i.fa-chevron-right {
     font-size: var(--padding-small) !important; }
   .side-bar .side-bar-scroll {
@@ -64,7 +78,12 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding: var(--padding-mid) var(--padding-small);
     display: flex;
     align-items: center;
-    cursor: pointer; }
+    cursor: pointer;
+    /* spacer or collapse arrow */
+    /* icon */
+    /* this holds the header name */
+    /* it truncates so you can still see the add new notebook button */
+    /* add new notebook button */ }
     .side-bar .header div {
       padding-right: var(--padding-ex-small);
       width: var(--padding-mid);
@@ -85,7 +104,8 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   .side-bar .list-item-container {
     padding: var(--padding-small);
     display: flex;
-    cursor: pointer; }
+    cursor: pointer;
+    /* spacer or collapse arrow */ }
     .side-bar .list-item-container div {
       min-width: var(--padding-small);
       padding-left: var(--indent); }
@@ -109,18 +129,22 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding-left: var(--padding-small); }
   .side-bar .sync-status {
     padding: var(--padding-mid);
-    align-self: flex-end; }
+    align-self: flex-end;
+    /* sync info */ }
     .side-bar .sync-status small {
       display: block;
       margin-bottom: var(--padding-small); }
     .side-bar .sync-status i {
       padding-right: var(--padding-small); }
 
+/* add notes + search + notes in current notebook, tag, or search */
 .note-list {
   display: flex;
   flex-direction: column;
   overflow: scroll;
-  padding: var(--padding-mid) 0; }
+  padding: var(--padding-mid) 0;
+  /* new note and new todo */
+  /* note list style */ }
   .note-list .add-new {
     display: flex;
     padding: var(--padding-small) var(--padding-mid);
@@ -135,13 +159,16 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
     padding: 0 var(--padding-mid); }
     .note-list .list-item-container div {
       padding: var(--padding-mid) 0;
-      width: 100%; }
+      width: 100%;
+      /* making overflowing labels truncate */ }
       .note-list .list-item-container div span:last-child, .note-list .list-item-container div label span:last-child {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         display: block; }
 
+/* note layout */
+/* note grid: by using a grid, a theme-builder can rearrange the sections easily */
 .note-panel {
   display: grid;
   grid-template-areas: "note_title note_title note_title note_title note_metadata note_metadata" "note_navigation note_tools note_tools note_tools note_tools note_view" "note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb note_breadcrumb" "note_edit note_edit note_edit note_render note_render note_render" "note_tags note_tags note_tags note_tags note_tags note_tags";
@@ -188,6 +215,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
   .note-tags a {
     padding-left: var(--padding-mid); }
 
+/* these are the note areas, defined for use in grid */
 .note-title {
   grid-area: note_title; }
 
@@ -278,12 +306,14 @@ body {
 .note-edit {
   border-right: var(--border-light); }
 
+/* used to color the headers in markdown, not sure the best way to define this */
 .color {
   color: var(--color-header); }
 
 .note-tags a {
   color: var(--color-primary); }
 
+/*font sizes */
 body {
   font-size: var(--font-size-base); }
 
@@ -308,6 +338,7 @@ p, li, fieldset, input, label, button {
 button, .header, .note-metadata {
   font-size: calc(var(--font-size-base) / var(--ratio)); }
 
+/* font family and style */
 body {
   font-family: var(--font-family-base);
   letter-spacing: var(--letter-spacing); }
@@ -328,6 +359,7 @@ body {
 .note-tags a {
   text-decoration: none; }
 
+/* icon font */
 @font-face {
   font-family: "Font Awesome 5 Free";
   src: local("forkawesome-webfont"), url("/fonts/forkawesome-webfont.woff2") format("woff2"); }
@@ -341,13 +373,19 @@ body {
   line-height: 1; }
 
 button {
+  /* base + used for toolbars */
   background-color: var(--color-1);
   border-radius: var(--border-radius);
   border: 0;
   text-align: center;
   cursor: pointer;
   line-height: 1em;
-  padding: calc(var(--padding-small) / 2); }
+  padding: calc(var(--padding-small) / 2);
+  /* darkens the buttons */
+  /* used for new note */
+  /* used for new todo */
+  /* used for new notebook */
+  /* used for sync */ }
   button:hover {
     filter: var(--darken-1); }
   button.new-note-button {
@@ -372,6 +410,7 @@ button {
     width: 100%;
     padding: var(--padding-small) 0; }
 
+/* tags */
 .note-tags button {
   background-color: var(--color-2);
   color: var(--color-5);
@@ -379,6 +418,7 @@ button {
   border-radius: 100px;
   margin: 0; }
 
+/* search */
 .search-wrapper {
   display: flex;
   border: var(--border-light);
@@ -399,49 +439,54 @@ button {
     .search-wrapper input:focus {
       outline: none; }
 
-.current-notebook input {
-  display: none; }
-.current-notebook label {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center; }
-.current-notebook .pseudo-checkbox {
-  display: flex;
-  align-self: center;
-  position: relative;
-  height: 1em;
-  width: 1em;
-  min-width: 1em;
-  border: var(--border-base);
-  cursor: pointer;
-  margin-right: var(--padding-small); }
-.current-notebook label span + span {
-  display: flex;
-  align-self: center;
-  position: relative;
-  cursor: pointer; }
-.current-notebook input:checked + label {
-  color: var(--color-5);
-  font-style: italic;
-  text-decoration: line-through; }
-  .current-notebook input:checked + label .pseudo-checkbox {
-    background-color: var(--color-primary);
-    border: var(--border-base-primary); }
-    .current-notebook input:checked + label .pseudo-checkbox:after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: calc(1em / 12);
-      left: calc(1em / 4);
-      width: calc(1em / 4);
-      height: calc(1em / 2);
-      border: solid var(--color-1);
-      border-width: 0 var(--padding-ex-small) var(--padding-ex-small) 0;
-      transform: rotate(45deg); }
-  .current-notebook input:checked + label span + span {
-    text-decoration: line-through;
-    opacity: 0.4; }
+/* fancy checkbox styles */
+.current-notebook {
+  /* hide the normal checkbox */
+  /* when the checkbox is checked... */ }
+  .current-notebook input {
+    display: none; }
+  .current-notebook label {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center; }
+  .current-notebook .pseudo-checkbox {
+    display: flex;
+    align-self: center;
+    position: relative;
+    height: 1em;
+    width: 1em;
+    min-width: 1em;
+    border: var(--border-base);
+    cursor: pointer;
+    margin-right: var(--padding-small); }
+  .current-notebook label span + span {
+    display: flex;
+    align-self: center;
+    position: relative;
+    cursor: pointer; }
+  .current-notebook input:checked + label {
+    color: var(--color-5);
+    font-style: italic;
+    text-decoration: line-through; }
+    .current-notebook input:checked + label .pseudo-checkbox {
+      background-color: var(--color-primary);
+      border: var(--border-base-primary);
+      /* checkmark */ }
+      .current-notebook input:checked + label .pseudo-checkbox:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: calc(1em / 12);
+        left: calc(1em / 4);
+        width: calc(1em / 4);
+        height: calc(1em / 2);
+        border: solid var(--color-1);
+        border-width: 0 var(--padding-ex-small) var(--padding-ex-small) 0;
+        transform: rotate(45deg); }
+    .current-notebook input:checked + label span + span {
+      text-decoration: line-through;
+      opacity: 0.4; }
 
 /*# sourceMappingURL=main.css.map */
