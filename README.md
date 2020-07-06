@@ -1,6 +1,7 @@
 # Joplin New Theme Playground   
-The goal of this project is to construct the new theme and use it as an opportunity to refresh the CSS structure.
+The goal of this repo is to build the new theme in HTML and CSS, and in doing so, use it as an opportunity to review the CSS structure to make it more theme-able.
 
+### Discussion
 https://discourse.joplinapp.org/t/desktop-new-design-is-nearly-ready-please-cast-your-final-vote/9698/43
 
 # tl;dr
