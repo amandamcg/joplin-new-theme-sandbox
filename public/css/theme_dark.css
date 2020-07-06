@@ -33,6 +33,20 @@
   --side-bar-width: 180px;
   --note-list-width: 260px; }
 
+:root {
+  --color-1: #1A1B22;
+  --color-2: #313440;
+  --color-3: #282a34;
+  --color-4: #B8C3CD;
+  --color-5: #7a8897;
+  --color-6: #D0D2D4;
+  --color-7: #DCDCDC;
+  --color-side-bar: var(--color-3);
+  --color-side-bar-text: var(--color-4);
+  --color-side-bar-selected: var(--color-primary);
+  --border-base: 1px solid var(--color-4);
+  --border-light: 1px solid var(--color-3); }
+
 /* base layout */
 /* main page grid panels */
 .side-bar {
@@ -489,4 +503,4 @@ button {
       text-decoration: line-through;
       opacity: 0.4; }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=theme_dark.css.map */

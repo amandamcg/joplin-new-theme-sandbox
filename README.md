@@ -4,7 +4,9 @@ The goal of this project is to construct the new theme and use it as an opportun
 https://discourse.joplinapp.org/t/desktop-new-design-is-nearly-ready-please-cast-your-final-vote/9698/43
 
 # tl;dr
-You can see the theme in action from `index.html` in the public folder
+1. You can see the theme in action by downloading and viewing the public folder.
+2. Swap the themes by changing the index.html file at line 8
+3. If you cannot see the icon font, see the "simple server" instructions below.
 
 ## themes
 All the themes were built off the base theme, changing the variables.
@@ -37,7 +39,7 @@ For speed of dev, I am using pug and sass, the render folder has the working fil
 
 
 ### simple server
-to get everything linking nicely I run a python simple server in public file
+to get everything linking nicely I run a python simple server from the command line
 ```bash
 cd public
 python -m SimpleHTTPServer 8002
