@@ -1,305 +1,104 @@
 doctype html
 html(lang="en")
     head    
-        meta(charset="utf-8")
-        meta(content="width=device-width,initial-scale=1" name="viewport")
-        title= "Joplin Theme Playground" 
-        link(
-            type="text/css" 
-            rel="stylesheet" 
-            href="css/fork-awesome.min.css"
-            )
-        // swap themes by changing this line
-        link(
-            type="text/css" 
-            rel="stylesheet" 
-            href="css/theme_base.css"
-            )
+        include includes/_head.pug
     body.kanban
-        .side-bar
-            .side-bar-scroll
-                .all-notes
-                    .header
-                        div
-                        i.fas.fa-clone
-                        span All Notes
-                .all-notebooks
-                    .header 
-                        div
-                            i.fas.fa-chevron-down
-                        i.fas.fa-tags
-                        span Tags
-                        button.new-notebook-button 
-                            i.fas.fa-plus
-                    .folders
-
-                        .list-item-container(draggable="true").list-item-depth-0
-                            div
-                            div A Prender
-                                span.count 8
-                        .list-item-container(draggable="true").list-item-depth-0
-                            div
-                                i.fas.fa-chevron-right
-                            div Courses
-                                span.count 12
-                        .list-item-container(draggable="true").list-item-depth-0
-                            div
-                                i.fas.fa-chevron-down
-                            div Divers
-                                span.count 5
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                            div Enterprise
-                                span.count 23
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                                i.fas.fa-chevron-down
-                            div Recipes
-                                span.count 3
-                        .list-item-container(draggable="true").list-item-depth-2.selected
-                            div 
-                                i.fas.fa-chevron-down
-                            div Blog Posts
-                                span.count 3/10
-                        .list-item-container(draggable="true").list-item-depth-2
-                            div
-                            div Bookmarks
-                                span.count 8
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                            div Tickets
-                                span.count 12
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                            div Enterprise
-                                span.count 23
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                                i.fas.fa-chevron-down
-                            div Recipes
-                                span.count 3
-                        .list-item-container(draggable="true").list-item-depth-2
-                            div 
-                                i.fas.fa-chevron-down
-                            div Bookmarks
-                                span.count 8
-                        .list-item-container(draggable="true").list-item-depth-2
-                            div
-                            div Bookmarks
-                                span.count 8
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                            div Tickets
-                                span.count 12
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                            div Enterprise
-                                span.count 23
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                                i.fas.fa-chevron-down
-                            div Recipes
-                                span.count 3
-                        .list-item-container(draggable="true").list-item-depth-2
-                            div 
-                                i.fas.fa-chevron-down
-                            div Bookmarks
-                                span.count 8
-                        .list-item-container(draggable="true").list-item-depth-2
-                            div
-                            div Bookmarks
-                                span.count 8
-                        .list-item-container(draggable="true").list-item-depth-1
-                            div
-                            div Tickets
-                                span.count 12                                
-
-            .sync-status
-                small Completed: 07/02/20 9:24 PM
-                button.sync-button
-                    i.fas.fa-sync
-                    | Synchronize
-
-
+        include includes/_notebooks.pug
         .note-list
-            .search-notes
-                .search-wrapper
-                    input(type='text', placeholder='Search')
-                    i.fas.fa-search
-                label(for='tags') board
-                select#tags(name='tags')
-                    option(selected) Editorial Flow
-                    option(value='recipes') Ideas
-                    option(value='study') Research
-                    option(value='work') + New Board
-                label(for='tags') add column
-                select#tags(name='tags')
-                    option(disabled, selected) --
-                    option(value='recipes') Idea
-                    option(value='writing') Ready to Edit
-                    option(value='study') Research
-                    option(value='work') + New Tag
-
-
+            include includes/_kanban_header.pug
             .kanban-board
-                .kanban-column
-                    h3 inbox
-                        span.count 2
-                    .list-item-container(draggable="true") 
+                .kanban-column(ondragover='onDragOver(event);', ondrop='onDrop(event);')
+                    div
+                        h3 inbox
+                        button.new-todo-button 
+                            i.fas.fa-plus
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-1 
                         div 
                             input(id="a", type="checkbox") 
-                            label(for="a") 
-                                span.pseudo-checkbox
-                                span Blog post idea with a long name that wraps around
+                            span.pseudo-checkbox
+                            span Blog post idea with a long name that wraps around
 
-                    button.new-todo-button 
-                        i.fas.fa-plus
 
-                .kanban-column
-                    h3 researching
-                        span.count 3
-                    .list-item-container(draggable="true") 
+
+                .kanban-column(ondragover='onDragOver(event);', ondrop='onDrop(event);')
+                    div
+                        h3 researching
+                        button.new-todo-button 
+                            i.fas.fa-plus
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-2 
                         div 
                             input(id="b", type="checkbox") 
-                            label(for="b") 
-                                span.pseudo-checkbox
-                                span Covid research
-                                    span.todo-count
-                                        i.fas.fa-check-square-o 
-                                        |  3/6
-                    .list-item-container(draggable="true") 
+                            span.pseudo-checkbox
+                            span Covid research
+                                span.todo-count
+                                    i.fas.fa-check-square-o 
+                                    |  3/6
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-3 
                         div
                             input(id="f", type="checkbox") 
-                            label(for="f") 
-                                span.pseudo-checkbox
-                                span 2020 updates
-                    .list-item-container(draggable="true") 
+                            span.pseudo-checkbox
+                            span 2020 updates
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-4 
                         div
                             input(id="e", type="checkbox") 
-                            label(for="e") 
-                                span.pseudo-checkbox
-                                span Working from home
-                    button.new-todo-button 
-                        i.fas.fa-plus
+                            span.pseudo-checkbox
+                            span Working from home
 
-                .kanban-column
-                    h3 writing
-                        span.count 2
-                    .list-item-container(draggable="true") 
+
+                .kanban-column(ondragover='onDragOver(event);', ondrop='onDrop(event);')
+                    div
+                        h3 writing
+                        button.new-todo-button 
+                            i.fas.fa-plus
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-5 
                         div 
                             input(id="c", type="checkbox") 
-                            label(for="c") 
-                                span.pseudo-checkbox
-                                span Working on open source projects
-                    .list-item-container(draggable="true").selected 
+                            span.pseudo-checkbox
+                            span Working on open source projects
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-0
                         div
                             input(id="d", type="checkbox") 
-                            label(for="d") 
-                                span.pseudo-checkbox
-                                span Fall Newsletter
-                    button.new-todo-button 
-                        i.fas.fa-plus
+                            span.pseudo-checkbox
+                            span
+                                a.toggle(href='#newsletter') Fall Newsletter
 
-                .kanban-column
-                    h3 ready for review
-                        span.count 2
-                    .list-item-container(draggable="true") 
+                .kanban-column(ondragover='onDragOver(event);', ondrop='onDrop(event);')
+                    div
+                        h3 ready for review
+                        button.new-todo-button 
+                            i.fas.fa-plus
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-6 
                         div 
                             input(id="c", type="checkbox") 
-                            label(for="c") 
-                                span.pseudo-checkbox
-                                span Summer Games
-                    .list-item-container(draggable="true")
+                            span.pseudo-checkbox
+                            span Summer Games
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-7
                         div
                             input(id="d", type="checkbox") 
-                            label(for="d") 
-                                span.pseudo-checkbox
-                                span Other things
-                    button.new-todo-button 
-                        i.fas.fa-plus
+                            span.pseudo-checkbox
+                            span Other things
 
-                .kanban-column
-                    h3 
-                        i.fas.fa-check-square-o 
-                        |  published
-                    .list-item-container(draggable="true") 
+
+                .kanban-column(ondragover='onDragOver(event);', ondrop='onDrop(event);')
+                    div
+                        h3 
+                            i.fas.fa-check-square-o 
+                            |  published
+                        button.new-todo-button 
+                            i.fas.fa-plus
+
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-8 
                         div 
                             input(id="first", type="checkbox", checked="checked") 
-                            label(for="first") 
-                                span.pseudo-checkbox
-                                span Community and further help with a really long names
-                    .list-item-container(draggable="true") 
+                            span.pseudo-checkbox
+                            span Community and further help with a really long names
+                    .list-item-container(draggable="true", ondragstart='onDragStart(event);')#item-9 
                         div
                             input(id="second", type="checkbox", checked="checked") 
-                            label(for="second") 
-                                span.pseudo-checkbox
-                                span Todo important task
-                    button.new-todo-button 
-                        i.fas.fa-plus
-
-        .note-panel
-            .note-title 
-                label
-                    input(id="second", type="checkbox") 
-                    | Fall Newsletter
-            .note-metadata
-                div 16/06/2020 
-                    span 10:21
-                button 
-                    i.fas.fa-info-circle
-            .note-navigation
-                button 
-                    i.fas.fa-arrow-left
-                button 
-                    i.fas.fa-arrow-right
-            .note-tools
-                button 
-                    i.fas.fa-bold
-                button 
-                    i.fas.fa-italic
-                button 
-                    i.fas.fa-heading
-                button 
-                    i.fas.fa-ellipsis-h
-                button 
-                    i.fas.fa-list-ul
-                button 
-                    i.fas.fa-list-ol
-                button 
-                    i.fas.fa-check-square
-                button 
-                    i.fas.fa-link
-                button
-                    i.fas.fa-code
-                button 
-                    i.fas.fa-paperclip
-                button 
-                    i.fas.fa-calendar
-            .note-view
-                button.selected
-                    span(style="white-space:nowrap") M
-                        i.fas.fa-arrow-down
-                button
-                    i.fas.fa-columns
-                button 
-                    i.fas.fa-share-square
-            .note-breadcrumb
-                div 
-                    a(href="#") A Prender
-            .note-edit
-                div
-                    p.color # This is the fall news
-
-                    p Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.
-
-                    p The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.
-
-
-            .note-tags
-                div
-                    button writing
-                    button welcome
-                    button notes
-                    button joplin
-                    button markdown
-                a(href="#") Add more tags ...
+                            span.pseudo-checkbox
+                            span Todo important task
+        include includes/note-editorial-board.pug
+        include includes/note-fall-newsletter.pug
+script(
+    src="js.js"
+    )  

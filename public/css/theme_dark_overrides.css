@@ -31,7 +31,7 @@
   --letter-spacing-wide: 0.06em;
   --line-height: 1.4em;
   --side-bar-width: 180px;
-  --note-list-width: 260px;
+  --note-list-width: 280px;
   --note-width: 1fr; }
 
 /* Dark theme variable overrides */
@@ -169,7 +169,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li {
       width: 100%; }
       .note-list .add-new button i {
         padding-right: var(--padding-small); }
-      .note-list .add-new button:first-child {
+      .note-list .add-new button:not(:last-child) {
         margin-right: var(--padding-mid); }
   .note-list .list-item-container {
     padding: 0 var(--padding-mid); }
@@ -510,18 +510,18 @@ body.kanban {
   --note-list-width: 1fr;
   --note-width: 300px; }
   body.kanban .note-list {
-    background-color: var(--color-4); }
+    background-color: var(--color-2); }
     body.kanban .note-list .kanban-board {
       display: flex; }
       body.kanban .note-list .kanban-board .kanban-column {
         width: 21%;
         margin: var(--padding-ex-small);
         padding: var(--padding-small);
-        background-color: var(--color-2);
+        background-color: var(--color-1);
         height: 82vh;
         border-radius: var(--border-radius); }
       body.kanban .note-list .kanban-board .list-item-container {
-        background-color: var(--color-1);
+        background-color: var(--color-2);
         border: var(--border-light);
         border-radius: var(--border-radius);
         margin-bottom: var(--padding-small);
@@ -548,9 +548,22 @@ body.kanban {
     display: grid;
     grid-template-areas: "note_title note_title note_title note_title note_title note_title" "note_tags note_tags note_tags note_tags note_tags note_tags" "note_navigation note_navigation note_view note_view note_view note_view" "note_tools note_tools note_tools note_tools note_tools note_tools" "note_edit note_edit note_edit note_edit note_edit note_edit" "note_breadcrumb note_breadcrumb note_metadata note_metadata note_metadata note_metadata";
     grid-auto-rows: auto;
-    padding: var(--padding-mid); }
+    padding: var(--padding-mid);
+    background-color: var(--color-1); }
+    body.kanban .note-panel .note-edit, body.kanban .note-panel .note-tags div {
+      background-color: var(--color-1); }
+    body.kanban .note-panel.toggle-content {
+      display: none; }
+    body.kanban .note-panel.toggle-content.is-visible {
+      display: grid; }
 body .note-navigation, body .note-tools, body .note-view {
   margin: var(--padding-ex-small); }
+
+.note-tags button {
+  transition: background-color 0.4s ease-in; }
+
+.no-padding-p p {
+  padding: 0; }
 
 /* Overrides to grid */
 .note-panel {

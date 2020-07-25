@@ -5,7 +5,7 @@ body
     --note-width: 300px
 
     .note-list
-      background-color: var(--color-4)
+      background-color: var(--color-2)
 
       .kanban-board
         display: flex
@@ -14,12 +14,12 @@ body
           width: 21%
           margin: var(--padding-ex-small)
           padding: var(--padding-small)
-          background-color: var(--color-2)
+          background-color: var(--color-1)
           height: 82vh
           border-radius: var(--border-radius)
 
         .list-item-container
-          background-color: var(--color-1)
+          background-color: var(--color-2)
           border: var(--border-light)
           border-radius: var(--border-radius)
           margin-bottom: var(--padding-small)
@@ -53,6 +53,23 @@ body
       grid-template-areas: "note_title note_title note_title note_title note_title note_title" "note_tags note_tags note_tags note_tags note_tags note_tags" "note_navigation note_navigation note_view note_view note_view note_view" "note_tools note_tools note_tools note_tools note_tools note_tools" "note_edit note_edit note_edit note_edit note_edit note_edit" "note_breadcrumb note_breadcrumb note_metadata note_metadata note_metadata note_metadata"
       grid-auto-rows: auto
       padding: var(--padding-mid)
+      background-color: var(--color-1)
+
+      .note-edit, .note-tags div
+        background-color: var(--color-1)
+
+      &.toggle-content
+        display: none
+
+      &.toggle-content.is-visible
+        display: grid
 
   .note-navigation, .note-tools, .note-view
     margin: var(--padding-ex-small)
+
+.note-tags button
+  transition: background-color 0.4s ease-in
+
+.no-padding-p
+  p
+    padding: 0

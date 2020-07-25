@@ -1,0 +1,29 @@
+div(style="display: flex; justify-content: space-between")
+    div(style="display: flex; align-items: center")
+        button 
+            a(href="/finish.html")
+                i.fas.fa-close
+        h3(style="margin: 0; padding: 0") Editorial Flow
+        | &nbsp;&nbsp;
+        a.toggle(href='#newsletter')
+            i.fas.fa-edit 
+            | edit 
+    div
+        select#tags(name='tags', style="justify-self: flex-end")
+            option(selected) Change Board
+            option Editorial Flow
+            option(value='recipes') Ideas
+            option(value='study') Research
+            option(value='work') + New Board
+        label(for='tags') add column
+        select#tags(name='tags')
+            option(disabled, selected) --
+            option(value='recipes') Idea
+            option(value='writing') Ready to Edit
+            option(value='study') Research
+            option(value='work') + New Tag
+
+.search-notes
+    .search-wrapper
+        input(type='text', placeholder='Search')
+        i.fas.fa-search
