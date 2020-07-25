@@ -31,7 +31,8 @@
   --letter-spacing-wide: 0.06em;
   --line-height: 1.4em;
   --side-bar-width: 180px;
-  --note-list-width: 260px; }
+  --note-list-width: 260px;
+  --note-width: 1fr; }
 
 /* base layout */
 /* main page grid panels */
@@ -50,7 +51,7 @@ body {
   grid-template-areas: "side_bar note_list note_panel";
   /* in the app, the user will drag to change these size */
   /* change them in the theme to see how it resizes */
-  grid-template-columns: var(--side-bar-width) var(--note-list-width) 4fr;
+  grid-template-columns: var(--side-bar-width) var(--note-list-width) var(--note-width);
   margin: 0; }
 
 /* reset margin and padding for base text styles */
@@ -440,18 +441,18 @@ button {
       outline: none; }
 
 /* fancy checkbox styles */
-.current-notebook {
+.list-item-container {
   /* hide the normal checkbox */
   /* when the checkbox is checked... */ }
-  .current-notebook input {
+  .list-item-container input {
     display: none; }
-  .current-notebook label {
+  .list-item-container label {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center; }
-  .current-notebook .pseudo-checkbox {
+  .list-item-container .pseudo-checkbox {
     display: flex;
     align-self: center;
     position: relative;
@@ -461,20 +462,20 @@ button {
     border: var(--border-base);
     cursor: pointer;
     margin-right: var(--padding-small); }
-  .current-notebook label span + span {
+  .list-item-container label span + span {
     display: flex;
     align-self: center;
     position: relative;
     cursor: pointer; }
-  .current-notebook input:checked + label {
+  .list-item-container input:checked + label {
     color: var(--color-5);
     font-style: italic;
     text-decoration: line-through; }
-    .current-notebook input:checked + label .pseudo-checkbox {
+    .list-item-container input:checked + label .pseudo-checkbox {
       background-color: var(--color-primary);
       border: var(--border-base-primary);
       /* checkmark */ }
-      .current-notebook input:checked + label .pseudo-checkbox:after {
+      .list-item-container input:checked + label .pseudo-checkbox:after {
         content: "";
         display: block;
         position: absolute;
@@ -485,8 +486,55 @@ button {
         border: solid var(--color-1);
         border-width: 0 var(--padding-ex-small) var(--padding-ex-small) 0;
         transform: rotate(45deg); }
-    .current-notebook input:checked + label span + span {
+    .list-item-container input:checked + label span + span {
       text-decoration: line-through;
       opacity: 0.4; }
+
+body.kanban {
+  --side-bar-width: 180px;
+  --note-list-width: 1fr;
+  --note-width: 300px; }
+  body.kanban .note-list {
+    background-color: var(--color-4); }
+    body.kanban .note-list .kanban-board {
+      display: flex; }
+      body.kanban .note-list .kanban-board .kanban-column {
+        width: 21%;
+        margin: var(--padding-ex-small);
+        padding: var(--padding-small);
+        background-color: var(--color-2);
+        height: 82vh;
+        border-radius: var(--border-radius); }
+      body.kanban .note-list .kanban-board .list-item-container {
+        background-color: var(--color-1);
+        border: var(--border-light);
+        border-radius: var(--border-radius);
+        margin-bottom: var(--padding-small);
+        display: block; }
+        body.kanban .note-list .kanban-board .list-item-container.selected {
+          background-color: var(--color-3);
+          border: var(--border-base-primary); }
+        body.kanban .note-list .kanban-board .list-item-container div {
+          border: 0; }
+        body.kanban .note-list .kanban-board .list-item-container .pseudo-checkbox {
+          display: none; }
+        body.kanban .note-list .kanban-board .list-item-container .todo-count {
+          font-size: calc(var(--font-size-base) / var(--ratio)  / var(--ratio));
+          color: var(--color-4); }
+  body.kanban .note-list .list-item-container div span:last-child, body.kanban .note-list .list-item-container div label span:last-child {
+    display: -webkit-box;
+    max-width: 200px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; }
+  body.kanban .note-panel {
+    display: grid;
+    grid-template-areas: "note_title note_title note_title note_title note_title note_title" "note_tags note_tags note_tags note_tags note_tags note_tags" "note_navigation note_navigation note_view note_view note_view note_view" "note_tools note_tools note_tools note_tools note_tools note_tools" "note_edit note_edit note_edit note_edit note_edit note_edit" "note_breadcrumb note_breadcrumb note_metadata note_metadata note_metadata note_metadata";
+    grid-auto-rows: auto;
+    padding: var(--padding-mid); }
+body .note-navigation, body .note-tools, body .note-view {
+  margin: var(--padding-ex-small); }
 
 /*# sourceMappingURL=theme_base.css.map */

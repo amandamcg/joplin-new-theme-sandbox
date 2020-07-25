@@ -8,7 +8,7 @@
     <!-- swap themes by changing this line-->
     <link type="text/css" rel="stylesheet" href="css/theme_base.css">
   </head>
-  <body>
+  <body class="kanban">
     <div class="side-bar">
       <div class="side-bar-scroll">
         <div class="all-notes">
@@ -96,118 +96,117 @@
             </div>
           </div>
         </div>
-        <div class="all-tags">
-          <div class="header"> 
-            <div><i class="fas fa-chevron-down"></i></div><i class="fas fa-tags"></i><span>Tags</span>
-          </div>
-          <div class="list-item-container list-item-depth-0" draggable="true">
-            <div></div>
-            <div>one<span class="count">1</span></div>
-          </div>
-          <div class="list-item-container list-item-depth-0" draggable="true">
-            <div></div>
-            <div>two<span class="count">1</span></div>
-          </div>
-        </div>
       </div>
       <div class="sync-status"><small>Completed: 07/02/20 9:24 PM</small>
         <button class="sync-button"><i class="fas fa-sync"></i>Synchronize</button>
       </div>
     </div>
     <div class="note-list">
-      <div class="add-new">
-        <button class="new-todo-button"> <i class="fas fa-plus"></i><span>New to-do</span></button>
-        <button class="new-note-button"> <i class="fas fa-plus"></i><span>New note</span></button>
-      </div>
       <div class="search-notes">
         <div class="search-wrapper">
           <input type="text" placeholder="Search"><i class="fas fa-search"></i>
         </div>
+        <label for="tags">board</label>
+        <select id="tags" name="tags">
+          <option selected>Editorial Flow</option>
+          <option value="recipes">Ideas</option>
+          <option value="study">Research</option>
+          <option value="work">+ New Board</option>
+        </select>
+        <label for="tags">add column</label>
+        <select id="tags" name="tags">
+          <option disabled selected>--</option>
+          <option value="recipes">Idea</option>
+          <option value="writing">Ready to Edit</option>
+          <option value="study">Research</option>
+          <option value="work">+ New Tag</option>
+        </select>
       </div>
-      <div class="current-notebook">
-        <!-- enable this to see a searched list item-->
-        <!-- .list-item-container(draggable="true") 
-        div Add 
-            span.searched support 
-            | for system theme
-        -->
-        <div class="list-item-container" draggable="true"> 
-          <div> <i class="fas fa-columns"></i> Editorial Board Flow</div>
-        </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> <i class="fas fa-columns"></i> Ideas</div>
-        </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> <i class="fas fa-columns"></i> Research</div>
-        </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> 
-            <input id="a" type="checkbox">
-            <label for="a"> <span class="pseudo-checkbox"></span><span>Blog post idea with a long name that wraps around</span></label>
+      <div class="kanban-board">
+        <div class="kanban-column">
+          <h3>inbox<span class="count">2</span></h3>
+          <div class="list-item-container" draggable="true"> 
+            <div> 
+              <input id="a" type="checkbox">
+              <label for="a"> <span class="pseudo-checkbox"></span><span>Blog post idea with a long name that wraps around</span></label>
+            </div>
           </div>
+          <button class="new-todo-button"> <i class="fas fa-plus"></i></button>
         </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> 
-            <input id="b" type="checkbox">
-            <label for="b"> <span class="pseudo-checkbox"></span><span>Covid research<span class="todo-count"><i class="fas fa-check-square-o"> </i> 3/6</span></span></label>
+        <div class="kanban-column">
+          <h3>researching<span class="count">3</span></h3>
+          <div class="list-item-container" draggable="true"> 
+            <div> 
+              <input id="b" type="checkbox">
+              <label for="b"> <span class="pseudo-checkbox"></span><span>Covid research<span class="todo-count"><i class="fas fa-check-square-o"> </i> 3/6</span></span></label>
+            </div>
           </div>
+          <div class="list-item-container" draggable="true"> 
+            <div>
+              <input id="f" type="checkbox">
+              <label for="f"> <span class="pseudo-checkbox"></span><span>2020 updates</span></label>
+            </div>
+          </div>
+          <div class="list-item-container" draggable="true"> 
+            <div>
+              <input id="e" type="checkbox">
+              <label for="e"> <span class="pseudo-checkbox"></span><span>Working from home</span></label>
+            </div>
+          </div>
+          <button class="new-todo-button"> <i class="fas fa-plus"></i></button>
         </div>
-        <div class="list-item-container" draggable="true"> 
-          <div>
-            <input id="f" type="checkbox">
-            <label for="f"> <span class="pseudo-checkbox"></span><span>2020 updates</span></label>
+        <div class="kanban-column">
+          <h3>writing<span class="count">2</span></h3>
+          <div class="list-item-container" draggable="true"> 
+            <div> 
+              <input id="c" type="checkbox">
+              <label for="c"> <span class="pseudo-checkbox"></span><span>Working on open source projects</span></label>
+            </div>
           </div>
+          <div class="list-item-container" draggable="true">
+            <div>
+              <input id="d" type="checkbox">
+              <label for="d"> <span class="pseudo-checkbox"></span><span>Fall Newsletter</span></label>
+            </div>
+          </div>
+          <button class="new-todo-button"> <i class="fas fa-plus"></i></button>
         </div>
-        <div class="list-item-container" draggable="true"> 
-          <div>
-            <input id="e" type="checkbox">
-            <label for="e"> <span class="pseudo-checkbox"></span><span>Working from home</span></label>
+        <div class="kanban-column">
+          <h3>ready for review<span class="count">2</span></h3>
+          <div class="list-item-container" draggable="true"> 
+            <div> 
+              <input id="c" type="checkbox">
+              <label for="c"> <span class="pseudo-checkbox"></span><span>Summer Games</span></label>
+            </div>
           </div>
+          <div class="list-item-container" draggable="true">
+            <div>
+              <input id="d" type="checkbox">
+              <label for="d"> <span class="pseudo-checkbox"></span><span>Other things</span></label>
+            </div>
+          </div>
+          <button class="new-todo-button"> <i class="fas fa-plus"></i></button>
         </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> 
-            <input id="c" type="checkbox">
-            <label for="c"> <span class="pseudo-checkbox"></span><span>Working on open source projects</span></label>
+        <div class="kanban-column">
+          <h3> <i class="fas fa-check-square-o"> </i> published</h3>
+          <div class="list-item-container" draggable="true"> 
+            <div> 
+              <input id="first" type="checkbox" checked="checked">
+              <label for="first"> <span class="pseudo-checkbox"></span><span>Community and further help with a really long names</span></label>
+            </div>
           </div>
-        </div>
-        <div class="list-item-container selected" draggable="true">
-          <div>
-            <input id="d" type="checkbox">
-            <label for="d"> <span class="pseudo-checkbox"></span><span>Fall Newsletter</span></label>
+          <div class="list-item-container" draggable="true"> 
+            <div>
+              <input id="second" type="checkbox" checked="checked">
+              <label for="second"> <span class="pseudo-checkbox"></span><span>Todo important task</span></label>
+            </div>
           </div>
-        </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> 
-            <input id="c" type="checkbox">
-            <label for="c"> <span class="pseudo-checkbox"></span><span>Summer Games</span></label>
-          </div>
-        </div>
-        <div class="list-item-container" draggable="true">
-          <div>
-            <input id="d" type="checkbox">
-            <label for="d"> <span class="pseudo-checkbox"></span><span>Other things</span></label>
-          </div>
-        </div>
-        <div class="list-item-container" draggable="true"> 
-          <div> 
-            <input id="first" type="checkbox" checked="checked">
-            <label for="first"> <span class="pseudo-checkbox"></span><span>Community and further help with a really long names</span></label>
-          </div>
-        </div>
-        <div class="list-item-container" draggable="true"> 
-          <div>
-            <input id="second" type="checkbox" checked="checked">
-            <label for="second"> <span class="pseudo-checkbox"></span><span>Todo important task</span></label>
-          </div>
+          <button class="new-todo-button"> <i class="fas fa-plus"></i></button>
         </div>
       </div>
     </div>
     <div class="note-panel">
-      <div class="note-title">
-        <label>
-          <input id="second" type="checkbox">Fall Newsletter
-        </label>
-      </div>
+      <div class="note-title"> <i class="fas fa-columns"></i>Editorial Flow</div>
       <div class="note-metadata">
         <div>16/06/2020 <span>10:21</span></div>
         <button> <i class="fas fa-info-circle"></i></button>
@@ -235,33 +234,22 @@
         <button> <i class="fas fa-share-square"></i></button>
       </div>
       <div class="note-breadcrumb">
-        <div> <a href="#">A Prender</a></div>
+        <div> <a href="#"> </a></div>
       </div>
       <div class="note-edit">
         <div>
-          <p class="color"># This is the fall news</p>
-          <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
-          <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
-        </div>
-      </div>
-      <div class="note-render">
-        <div>
-          <h1>This is the fall newsletter</h1>
-          <p>Joplin is a free, open source note taking and to-do application, which helps you write and organise your notes, and synchronise them between your devices. The notes are searchable, can be copied, tagged and modified either from the applications directly or from your own text editor. The notes are in [Markdown format](https://joplinapp.org/#markdown). Joplin is available as a **💻 desktop**, **📱 mobile** and **🔡 terminal** application.</p>
-          <p>The notes in this notebook give an overview of what Joplin can do and how to use it. In general, the three applications share roughly the same functionalities; any differences will be clearly indicated.</p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
-          <p> </p>
+          <p class="color">#inbox </p>
+          <p>type: inbox</p>
+          <p>incoming</p>
+          <p class="color">#researching </p>
+          <p>researching</p>
+          <p class="color">#writing </p>
+          <p>writing</p>
+          <p class="color">#ready-for-review </p>
+          <p>ready for review</p>
+          <p class="color">#done</p>
+          <p>type: done </p>
+          <p>published</p>
           <p> </p>
           <p> </p>
           <p> </p>
@@ -286,11 +274,8 @@
       </div>
       <div class="note-tags">
         <div>
-          <button>writing</button>
-          <button>welcome</button>
-          <button>notes</button>
-          <button>joplin</button>
-          <button>markdown</button>
+          <button>Blog Posts</button>
+          <button>Recipes</button>
         </div><a href="#">Add more tags ...</a>
       </div>
     </div>

@@ -1,0 +1,58 @@
+body
+  &.kanban
+    --side-bar-width: 180px
+    --note-list-width: 1fr
+    --note-width: 300px
+
+    .note-list
+      background-color: var(--color-4)
+
+      .kanban-board
+        display: flex
+
+        .kanban-column
+          width: 21%
+          margin: var(--padding-ex-small)
+          padding: var(--padding-small)
+          background-color: var(--color-2)
+          height: 82vh
+          border-radius: var(--border-radius)
+
+        .list-item-container
+          background-color: var(--color-1)
+          border: var(--border-light)
+          border-radius: var(--border-radius)
+          margin-bottom: var(--padding-small)
+          display: block
+
+          &.selected
+            background-color: var(--color-3)
+            border: var(--border-base-primary)
+
+          div
+            border: 0
+
+          .pseudo-checkbox
+            display: none
+
+          .todo-count
+            font-size: calc(var(--font-size-base) / var(--ratio)  / var(--ratio))
+            color: var(--color-4)
+
+    .note-list .list-item-container div span:last-child, .note-list .list-item-container div label span:last-child
+      display: -webkit-box
+      max-width: 200px
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: normal
+
+    .note-panel
+      display: grid
+      grid-template-areas: "note_title note_title note_title note_title note_title note_title" "note_tags note_tags note_tags note_tags note_tags note_tags" "note_navigation note_navigation note_view note_view note_view note_view" "note_tools note_tools note_tools note_tools note_tools note_tools" "note_edit note_edit note_edit note_edit note_edit note_edit" "note_breadcrumb note_breadcrumb note_metadata note_metadata note_metadata note_metadata"
+      grid-auto-rows: auto
+      padding: var(--padding-mid)
+
+  .note-navigation, .note-tools, .note-view
+    margin: var(--padding-ex-small)
