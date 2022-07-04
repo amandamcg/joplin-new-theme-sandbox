@@ -1,4 +1,6 @@
-# Joplin New Theme Playground   
+# this is out of date. I recommend https://github.com/andrejilderda/joplin-macos-native-theme these days.
+
+## Joplin New Theme Playground   
 The goal of this repo is to build the new theme in HTML and CSS, and in doing so, use it as an opportunity to review the CSS structure to make it more theme-able.
 
 ### Discussion
